@@ -7,7 +7,11 @@
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
     ~/.config/i3:
-        path: config/i3/
+        path: i3/
+        create: true
+    
+    /etc/X11/xorg.conf.d/50-synaptics.conf:
+        path: /etc/X11/xorg.conf.d/50-synaptics.conf
         create: true
 
 
