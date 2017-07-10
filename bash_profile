@@ -9,4 +9,10 @@ fi
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
+PATH=~/bin:$PATH
+PATH=~/opt/sdk/platform-tools:$PATH
+
+PATH=~/pebble-dev/pebble-sdk-4.4.1-linux64/bin:$PATH
+
 export PATH
+
