@@ -14,7 +14,8 @@ order += "ethernet enp0s25"
 order += "volume master"
 order += "battery 0"
 order += "cpu_temperature 0"
-order += "load"
+#order += "load"
+order += "cpu_usage"
 order += "tztime berlin"
 
 
@@ -63,6 +64,10 @@ tztime berlin {
 
 load {
         format = "%5min"
+}
+
+cpu_usage {
+	format = "CPU: %usage"
 }
 
 cpu_temperature 0 {
