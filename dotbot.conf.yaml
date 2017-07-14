@@ -18,8 +18,13 @@
         path: xinitrc
         force: true
         create: true
+
     ~/.config/i3:
         path: i3/
+        create: true
+        force: true
+    ~/.config/i3status:
+        path: i3status
         create: true
         force: true
     
