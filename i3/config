@@ -15,7 +15,11 @@ font pango:Inconsolata 9
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+#Network Manager applet
 exec --no-startup-id nm-applet
+
+#At each restart take care of possible secondary monitor
+exec_always "~/.config/i3/autoxrandr.sh"
 
 bindsym Ctrl+1 exec "setxkbmap -layout us"
 bindsym Ctrl+2 exec "setxkbmap -layout cz"
