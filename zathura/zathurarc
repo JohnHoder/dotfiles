@@ -1,0 +1,24 @@
+set selection-clipboard clipboard
+set statusbar-home-tilde true
+set incremental-search true
+set show-v-scrollbar true
+set window-title-basename true
+
+set page-padding 15
+set adjust-open width
+
+set recolor-keephue
+
+# colors
+set recolor-darkcolor  "#FFFFFF"
+set recolor-lightcolor "#333333"
+set statusbar-fg "#000000"
+set statusbar-bg "#C2BFA5"
+set inputbar-fg "#FFFFFF"
+set inputbar-bg "#333333"
+set completion-highlight-fg "#F0E68C"
+set completion-highlight-bg "#6B8E23"
+# set highlight-color "#CD853F"
+# set highlight-active-color "#F0E68C"
+set notification-fg "#FFFFFF"
+set notification-bg "#333333"

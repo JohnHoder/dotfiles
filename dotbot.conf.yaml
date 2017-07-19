@@ -58,3 +58,7 @@
 
     #UDISKIE
     ~/.config/udiskie: udiskie/
+
+    #ZATHURA
+    ~/.config/zathura/zathurarc: zathura/
+
