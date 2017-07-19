@@ -22,6 +22,8 @@ font pango:Inconsolata 10
 
 # Network Manager applet
 exec --no-startup-id nm-applet
+#udiskie applet
+exec --no-startup-id "udiskie --tray"
 
 # At each restart take care of possible secondary monitor
 exec_always "~/.config/i3/autoxrandr.sh"

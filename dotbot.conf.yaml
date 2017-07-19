@@ -58,6 +58,3 @@
 
     #UDISKIE
     ~/.config/udiskie: udiskie/
-    ~/.config/systemd/user/udiskie.service:
-        path: udiskie/udiskie.service
-        create: true
