@@ -181,10 +181,10 @@ bar {
         background	#191919
 	
 #       class                  border           backgrd         text
-        focused_workspace      #191919	        #191919         #bf3f34
-        active_workspace       #191919	        #191919         #696f89
-        inactive_workspace     #191919	        #191919         #696f89
-        urgent_workspace       #191919	        #191919         #c7a551
+        focused_workspace      #bf3f34	        #001a33         #ffffff
+        active_workspace       #19334d	        #191919         #696f89
+        inactive_workspace     #19334d	        #191919         #696f89
+        urgent_workspace       #19334d	        #191919         #ff3333
    }
 }
 
