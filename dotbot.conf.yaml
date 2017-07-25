@@ -12,15 +12,6 @@
       force: true
 
 - link:
-    ~/.bash_profile:
-        path: bash_profile
-        force: true
-    ~/.bashrc:
-        path: bashrc
-        force: true
-    ~/.bash_logout: 
-        path: bash_logout
-        force: true
     ~/.gitconfig:
         path: gitconfig
         force: true
@@ -29,6 +20,16 @@
         path: xinitrc
         force: true
         create: true
+    ~/.Xdefaults:
+        path: Xdefaults
+
+    #ZSH
+    ~/.zshrc:
+        path: zshrc
+    ~/.zlogin:
+        path: zlogin
+    ~/.oh-my-zsh/themes/custom.zsh-theme:
+        path: custom.zsh-theme
 
     #I3
     ~/.config/i3:
