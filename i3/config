@@ -211,5 +211,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 ## Take screenshot
 bindsym $mod+Control+b exec 'scrot ~/Pictures/%b%d::%H%M%S.png'
 
+## Make NumLock ON by default
+exec_always --no-startup-id numlockx off
 
 
