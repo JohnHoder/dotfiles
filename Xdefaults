@@ -1,8 +1,11 @@
 URxvt.transparent: true
 URxvt.shading: 30
 
-URxvt.background: #300a24
+#URxvt.background: #300a24
 URxvt.foreground: #FFFFFF
+
+URxvt.transparent:   true
+URxvt.shading:       20
 
 URxvt.font: xft:DejaVu Sans Mono:size=12
 URxvt.iconFile: /usr/share/icons/Humanity/apps/48/terminal.svg
