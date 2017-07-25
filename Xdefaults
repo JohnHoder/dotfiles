@@ -11,6 +11,8 @@ URxvt.font: xft:DejaVu Sans Mono:size=12
 URxvt.iconFile: /usr/share/icons/Humanity/apps/48/terminal.svg
 URxvt.scrollBar_right: true
 
+URxvt.saveLines: 5000000
+
 ! gnome-terminal Tango theme
 ! black
 URxvt.color0 : #2E2E34343636

@@ -25,11 +25,11 @@
 
     #ZSH
     ~/.zshrc:
-        path: zshrc
+        path: zsh/zshrc
     ~/.zlogin:
-        path: zlogin
+        path: zsh/zlogin
     ~/.oh-my-zsh/themes/custom.zsh-theme:
-        path: custom.zsh-theme
+        path: zsh/custom.zsh-theme
 
     #I3
     ~/.config/i3:
