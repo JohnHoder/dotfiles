@@ -2,7 +2,7 @@ URxvt.transparent: true
 URxvt.shading: 30
 
 #URxvt.background: #300a24
-URxvt.foreground: #FFFFFF
+URxvt.foreground: #F3F3F3
 
 URxvt.transparent:   true
 URxvt.shading:       20
