@@ -33,7 +33,7 @@ URxvt.color15 : #EEEEEEEEECEC
 #   some nice listings are at:
 #     http://www.nisrv.com/drupal/?q=node/11
 #     http://www.htmlgoodies.com/tutorials/colors/article.php/3478921
-URxvt*tintColor: olivedrab2
+URxvt*tintColor: tomato1
 URxvt*inheritPixmap: true
 
 # shading - 0 to 99 darkens, 101 to 200 lightens.
@@ -50,6 +50,10 @@ URxvt.shading: 20
 # background color (prior to tinting) (default is white)
 URxvt.depth: 32
 URxvt.background: #675839
+#URxvt.background: black
+
+URxvt*highlightColor: DarkSlateGray3
+URxvt*highlightTextColor: black
 
 # Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
 #  Fedora/debian packages: libXft/libxft2 
@@ -98,3 +102,9 @@ URxvt*enable-fading on
 URxvt*fade 50
 URxvt*fadecolor red
 
+URxvt.urlLauncher: chromium
+URxvt.matcher.button: 3
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.colorUL: #4682B4
+
+URxvt*cursorColor: #00b48b
