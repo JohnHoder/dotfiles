@@ -3,6 +3,20 @@
 # Exit after failed command
 set -e
 
+################################
+### ANSIBLE SETUP ##############
+################################
+
+echo "Setting up system with Ansible ..."
+
+ansible-playbook -v -i "localhost," -c local ansible.yml
+
+echo "Ansible - DONE"
+
+################################
+### DOTBOT SETUP ###############
+################################
+
 # Dotbot configuration
 CONFIG="dotbot.conf.yaml"
 DOTBOT_MODULE="dotbot"

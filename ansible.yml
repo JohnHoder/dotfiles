@@ -1,0 +1,47 @@
+---
+- hosts: all
+  become_user: root
+  become: true
+  tasks:
+   - name: Installing packages
+     dnf: name={{item}} state=present
+     with_items:
+      - git
+      - zathura-pdf-mupdf
+      - zathura
+      - zsh
+      - zsh-syntax-highlighting
+      - w3m
+      - udiskie
+      - tlp
+      - texmaker
+      - xorg-x11-drv-synaptics-devel
+      - xorg-x11-drv-synaptics
+      - transmission
+      - stardict
+      - stardict-dic-cs_CZ
+      - rxvt-unicode-256color
+      - ranger
+      - powertop
+      - nmap
+      - newsbeuter
+      - network-manager-applet
+      - nano
+      - links
+      - irssi
+      - i3status
+      - i3
+      - i3lock
+      - feh
+      - elinks
+      - dmenu
+      - chromium
+
+   - name: Installing Oh-my-zsh
+     shell: wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+
+  become_user: john
+  become: true
+  tasks:
+   - name: Changing shell to ZSH
+     shell: chsh -s /usr/bin/zsh
