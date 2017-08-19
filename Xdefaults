@@ -41,14 +41,15 @@ URxvt*inheritPixmap: true
 #URxvt*shading: 40
 
 # font color (default is black)
-URxvt.foreground: DarkSlateGray3
+#URxvt.foreground: DarkSlateGray3
+URxvt.foreground: #D3FFCE
 
 URxvt.transparent: true
 URxvt.shading: 20
 
 # background color (prior to tinting) (default is white)
-#URxvt.depth: 32
-#URxvt.background: #675839
+URxvt.depth: 32
+URxvt.background: #675839
 
 # Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
 #  Fedora/debian packages: libXft/libxft2 
