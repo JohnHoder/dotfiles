@@ -95,7 +95,7 @@ prompt_end() {
 
 r_prompt_end() {
   if [[ -n $R_CURRENT_BG ]]; then
-    echo -n " %{%k%F{$1}%}$R_SEGMENT_SEPARATOR"
+    echo -n " %{%k%F{$1}%}"
   else
     echo -n "%{%k%}"
   fi
@@ -233,7 +233,7 @@ build_prompt() {
 }
 
 r_prompt_error() {
-  r_prompt_segment red white " ERROR %? ↵ %"
+  r_prompt_segment red white "\u271D ERROR %? ↵ %"
 }
 
 r_build_prompt() {
