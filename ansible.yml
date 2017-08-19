@@ -39,5 +39,5 @@
    - name: Installing Oh-my-zsh
      shell: wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
-   - name: Changing shell to ZSH
-     shell: su - john -c "chsh -s /usr/bin/zsh"
+#   - name: Changing shell to ZSH
+#     shell: su - john -c "chsh -s /usr/bin/zsh"
