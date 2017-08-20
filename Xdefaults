@@ -42,7 +42,7 @@ URxvt*inheritPixmap: true
 
 # font color (default is black)
 #URxvt.foreground: DarkSlateGray3
-URxvt.foreground: #D3FFCE
+URxvt.foreground: white
 
 URxvt.transparent: true
 URxvt.shading: 20
@@ -52,7 +52,7 @@ URxvt.depth: 32
 URxvt.background: #675839
 #URxvt.background: black
 
-URxvt*highlightColor: DarkSlateGray3
+URxvt*highlightColor: green
 URxvt*highlightTextColor: black
 
 # Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
@@ -107,4 +107,5 @@ URxvt.matcher.button: 3
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt.colorUL: #4682B4
 
-URxvt*cursorColor: #00b48b
+URxvt*cursorColor: #8ee826
+
