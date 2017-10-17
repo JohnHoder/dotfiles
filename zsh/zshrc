@@ -55,8 +55,9 @@ plugins=(git)
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 PATH=~/bin:$PATH
-PATH=~/opt/sdk/platform-tools:$PATH
+PATH=/opt/sdk/platform-tools:$PATH
 PATH=~/pebble-dev/pebble-sdk-4.4.1-linux64/bin:$PATH
+PATH=/usr/sbin:$PATH
 
 export PATH
 
