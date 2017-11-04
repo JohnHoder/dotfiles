@@ -73,6 +73,6 @@
 
 - shell:
     - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"]
-    - [vim +PluginInstall +qallvim]
+    - [sh -c "im +PluginInstall +qallvim" &]
 
 
