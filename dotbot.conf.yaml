@@ -67,3 +67,12 @@
     ~/.config/ranger/rifle.conf:
         path: ranger/rifle.conf
 
+    #vim
+    ~/.vimrc:
+        path: vimrc
+
+- shell:
+    - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"]
+    - [vim +PluginInstall +qallvim]
+
+
