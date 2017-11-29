@@ -35,6 +35,7 @@ bindsym Ctrl+2 exec "setxkbmap -layout cz"
 bindsym Ctrl+3 exec "setxkbmap -layout de"
 bindsym Ctrl+4 exec "setxkbmap -layout ru"
 bindsym Ctrl+5 exec "setxkbmap -layout sk"
+bindsym Ctrl+6 exec "setxkbmap -layout fr"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
