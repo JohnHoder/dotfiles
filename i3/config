@@ -201,9 +201,10 @@ for_window [class="URxvt"] border 1pixel
 
 for_window [window_role="pop-up"] floating enable
 for_window [instance="sun-awt-X11-XFramePeer"] floating enable
+for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
 
-bindsym $mod+minus scratchpad show
-bindsym $mod+Shift+minus move scratchpad
+## Take screenshot
+bindsym Print exec gnome-screenshot
 
 ## File browser
 bindsym $mod+Shift+f exec $terminal -e ranger
@@ -212,9 +213,6 @@ bindsym $mod+Shift+f exec $terminal -e ranger
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
-
-## Take screenshot
-bindsym $mod+Control+b exec 'scrot ~/Pictures/%b%d::%H%M%S.png'
 
 ## Make NumLock ON by default
 exec_always --no-startup-id numlockx on
