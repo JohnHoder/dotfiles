@@ -207,6 +207,7 @@ for_window [class="^st"] border none
 for_window [class="terminal"] border none
 for_window [class="[Zz]athura"] border none
 for_window [class="URxvt"] border 1pixel
+for_window [class="Firefox"] border none
 
 for_window [window_role="pop-up"] floating enable
 for_window [instance="sun-awt-X11-XFramePeer"] floating enable
