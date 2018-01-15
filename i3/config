@@ -207,11 +207,31 @@ for_window [class="^st"] border none
 for_window [class="terminal"] border none
 for_window [class="[Zz]athura"] border none
 for_window [class="URxvt"] border 1pixel
-for_window [class="Firefox"] border none
+for_window [window_role="vlc-playlist"] floating enable
 
+for_window [class="Chrome" window_role="pop-up"] floating enable
+
+## General setting has to be first, so that more specific ones can override
+for_window [class="Firefox"] border none
+for_window [class="Firefox" window_type="Dialog"] border normal 2
+for_window [class="Firefox" instance="DTA"] floating enable
+for_window [class="Firefox" window_role="Preferences"] floating enable
+for_window [class="Firefox" window_role="Options"] floating enable
+for_window [class="Firefox" window_role="About"] floating enable
+for_window [class="Firefox" title="All-in-One Sidebar – Einstellungen"] floating enable
+for_window [class="Firefox" title="Downloads hinzufügen"] floating enable
+for_window [class="Firefox" title="Tree Style Tab Konfiguration"] floating enable
+
+for_window [class="Thunderbird" title="Gespeicherte Passwörter"] floating enable
+for_window [class="Thunderbird" title="Thunderbird-Einstellungen"] floating enable
+
+for_window [window_role="bubble"] floating enable
 for_window [window_role="pop-up"] floating enable
-for_window [instance="sun-awt-X11-XFramePeer"] floating enable
-for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
+
+#for_window [instance="sun-awt-X11-XFramePeer"] floating enable
+#for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
+
+for_window [instance="sun-awt-X11-XFramePeer" title="^Burp Suite(.*)"] floating enable
 
 for_window [title="TeamViewer Panel (minimized)"] floating enable, move absolute position 900 px 0 px
 for_window [title="TeamViewer Panel"] floating enable, move absolute position 900 px 0 px
@@ -235,3 +255,5 @@ exec_always --no-startup-id numlockx on
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+# lock screen
+bindsym $mod+End exec "i3lock -ti ~/.config/i3/wallpapers/bg.png"
