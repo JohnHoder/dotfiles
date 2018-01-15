@@ -257,3 +257,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # lock screen
 bindsym $mod+End exec "i3lock -ti ~/.config/i3/wallpapers/bg.png"
+
+## register school subjects
+bindsym $mod+Ctrl+Shift+1 exec "gnome-terminal -x bash -c 'cd ~/muni1/ && python muni_seminars_threaded.py; read -n1;'"
+bindsym $mod+Ctrl+Shift+2 exec "gnome-terminal -x bash -c 'cd ~/muni2_1/ && python muni_seminars_threaded.py; read -n1;'"; exec "gnome-terminal -x bash -c 'cd ~/muni2_2/ && python muni_seminars_threaded.py; read -n1;'"
+bindsym $mod+Ctrl+Shift+3 exec "gnome-terminal -x bash -c 'cd ~/muni3/ && python muni_seminars_threaded.py; read -n1;'"
+
