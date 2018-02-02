@@ -38,9 +38,11 @@
       - mercurial
       - pavucontrol
       - xbacklight
+      - fortune-mod
 
    - name: Installing Oh-my-zsh
      shell: sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 #   - name: Changing shell to ZSH
 #     shell: su - john -c "chsh -s /usr/bin/zsh"
+
