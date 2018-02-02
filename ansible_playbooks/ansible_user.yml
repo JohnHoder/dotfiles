@@ -1,0 +1,10 @@
+- hosts: all
+  become: true
+  become_user: john
+  tasks:
+   - name: test
+     shell: echo 'test'
+
+   - name: Changing shell to ZSH
+     shell: chsh -s /usr/bin/zsh
+
