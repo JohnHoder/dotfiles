@@ -2,10 +2,10 @@
 #
 # Final init script executed on login shell - in essence late .zprofile
 
-## Print fortune [french law related] on login shell
-#[ -x /usr/bin/fortune ] && fortune droit
+### Print fortune [french law related] on login shell
+[ -x /usr/bin/fortune ] && fortune droit
 
-# start X
+### start X
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	$(startx i3)
 fi
