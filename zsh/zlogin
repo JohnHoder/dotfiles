@@ -7,6 +7,6 @@
 
 # start X
 if [[ "$(tty)" == '/dev/tty1' ]]; then
-	#$(xinit /usr/bin/i3)
+	$(startx i3)
 fi
 
