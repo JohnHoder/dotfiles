@@ -1,7 +1,50 @@
-#exec i3 &
+#!/bin/bash
 
-#xset dpms 30 120 900 &
+echo "XINITRC executed."
 
-#setxkbmap -layout us &
+# use bash for "exec -l", howto run login shell by /bin/sh ?
 
-xinit /usr/bin/i3
+if [ $# -eq 1 -a -n "$1" ]; then
+	LXSESSION=$1
+else
+# default session
+	LXSESSION=/usr/bin/i3
+fi
+
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+if [ -f /etc/X11/xinit/xinitrc-common ]; then
+# fedora
+	. /etc/X11/xinit/xinitrc-common
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
+elif [ -x /etc/X11/xinit/Xsession ]; then
+# fedora
+	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/xinit/Xsession \"$LXSESSION\""
+elif [ -x /etc/X11/Xsession ]; then
+# mandriva, debian, ubuntu
+	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/Xsession \"$LXSESSION\""
+elif [ -x /etc/X11/xinit/xinitrc ]; then
+#suse
+	export WINDOWMANAGER=$LXSESSION
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c /etc/X11/xinit/xinitrc"
+else
+# unknown, user should custom /etc/lxdm/xinitrc self
+	if [ -x /etc/lxdm/xinitrc ]; then
+		. /etc/lxdm/xinitrc "$LXSESSION"
+	fi
+	if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+		for f in /etc/X11/xinit/xinitrc.d/* ; do
+			[ -x "$f" ] && . "$f"
+		done
+		unset f
+	fi
+
+	if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS";
+	then
+		eval "$(dbus-launch --sh-syntax --exit-with-session)"
+	fi
+
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
+fi
+
