@@ -10,6 +10,6 @@
     cd dotfiles && git remote 'set-url' --push origin git@github.com:JohnHoder/dotfiles.git
     
     sudo ./setupansible.sh
-    ./setupdotfiles.sh
+    sudo ./setupdotfiles.sh
 
 
