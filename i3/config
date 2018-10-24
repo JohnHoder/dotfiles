@@ -33,7 +33,7 @@ bindsym $mod+Control+m move workspace to output left
 bindsym Ctrl+1 exec "setxkbmap -layout us"
 bindsym Ctrl+2 exec "setxkbmap -layout cz"
 bindsym Ctrl+3 exec "setxkbmap -layout de"
-bindsym Ctrl+4 exec "setxkbmap -layout ru"
+bindsym Ctrl+4 exec "setxkbmap -layout bg -variant phonetic"
 bindsym Ctrl+5 exec "setxkbmap -layout sk"
 bindsym Ctrl+6 exec "setxkbmap -layout ca,fr"
 
