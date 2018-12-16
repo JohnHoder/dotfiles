@@ -59,6 +59,7 @@ PATH=/opt/sdk/platform-tools:$PATH
 PATH=~/pebble-dev/pebble-sdk-4.4.1-linux64/bin:$PATH
 PATH=/usr/sbin:$PATH
 PATH=/opt/sublime_text_3:$PATH
+PATH=/opt/pebble-dev/bin:$PATH
 
 export PATH
 
