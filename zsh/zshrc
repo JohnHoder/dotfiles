@@ -1,3 +1,6 @@
+#ZSH_DISABLE_COMPFIX="true"
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -49,7 +52,9 @@ ZSH_THEME="custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-completions)
+
+autoload -U compinit && compinit
 
 # User configuration
 
