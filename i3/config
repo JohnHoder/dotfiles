@@ -20,9 +20,6 @@ font pango:Inconsolata 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Enable touchpad tapping
-exec --no-startup-id "xinput set-prop 13 284 1"
-
 # Network Manager applet
 exec --no-startup-id nm-applet
 #udiskie applet

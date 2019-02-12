@@ -50,8 +50,12 @@
         path: 00-keyboard.conf
         create: true
         force: true
-    /etc/X11/xorg.conf.d/20-intel.conf
+    /etc/X11/xorg.conf.d/20-intel.conf:
         path: 20-intel.conf
+        create: true
+        force: true
+    /etc/X11/xorg.conf.d/90-touchpad.conf:
+        path: 90-touchpad.conf
         create: true
         force: true
 
