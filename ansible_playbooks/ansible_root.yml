@@ -55,3 +55,12 @@
    - name: disable gdm
      shell: systemctl disable gdm.service
 
+   - name: Downloading and compiling fortunes-fr
+     shell: wget https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz -O ~/fortunes-fr.tar.gz
+   - name: Extracting fortunes-fr
+     shell: tar -zxvf ~/fortunes-fr.tar.gz -C ~/
+   - name: Install fortunes-fr
+     shell: cd ~/fortunes-fr-0.02; ./configure; make; make install
+   - name: Clean fortunes-fr
+     shell: rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz
+
