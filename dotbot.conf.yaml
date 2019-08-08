@@ -23,6 +23,12 @@
     ~/.Xdefaults:
         path: Xdefaults
 
+    #bashrc
+    ~/.bashrc:
+        path: bashrc
+        force: true
+        create: true
+
     #ZSH
     ~/.zshrc:
         path: zsh/zshrc

@@ -5,6 +5,21 @@
    - name: test
      shell: echo 'test'
 
+   - name: Downloading oh-my-zsh
+     shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+     args:
+       warn: false
+
+   - name: Downloading zsh-completion
+     shell: git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+#   - name: Downloading zsh-syntax-highlighting
+#     shell: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+   - name: Cloning zsh-syntax-highlighting repo
+     git:
+       repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+       dest: ~/zsh-syntax-highlighting
+
    - name: Changing shell to ZSH
      shell: chsh -s /usr/bin/zsh
-

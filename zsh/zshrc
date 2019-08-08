@@ -58,7 +58,7 @@ autoload -U compinit && compinit
 
 # User configuration
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl":$PATH
 PATH=~/bin:$PATH
 PATH=/opt/sdk/platform-tools:$PATH
 PATH=~/pebble-dev/pebble-sdk-4.4.1-linux64/bin:$PATH
