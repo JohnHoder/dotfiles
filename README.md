@@ -11,5 +11,5 @@
     
     sudo ./setupansible.sh
     sudo ./setupdotfiles.sh
-
+    chsh -s /usr/bin/zsh
 
