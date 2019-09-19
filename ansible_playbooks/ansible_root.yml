@@ -39,6 +39,7 @@
       - pavucontrol
       - xbacklight
       - fortune-mod
+      - vim
 
 #   - name: Downloading oh-my-zsh
 #     shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
