@@ -61,7 +61,7 @@
         create: true
         force: true
     /etc/X11/xorg.conf.d/30-touchpad.conf:
-        path: 90-touchpad.conf
+        path: 30-touchpad.conf
         create: true
         force: true
 
