@@ -66,3 +66,6 @@
    - name: Clean fortunes-fr
      shell: rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz
 
+   - name: Setup youtube-dl
+     shell: wget https://yt-dl.org/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+x /usr/local/bin/youtube-dl
+
