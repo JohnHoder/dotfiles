@@ -21,14 +21,8 @@ font pango:Inconsolata 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Run conky
-exec --no-startup-id "conky -c ~/.config/conky/rightpanel/conkyrc_rightpanel"
-
-#####################################################################################################################
-#################                          compton of i3wm                                          #################
-#####################################################################################################################
-
-#if you want transparency on non-focused windows, ...
-exec_always --no-startup-id compton --blur-background --config ~/.config/i3/compton.conf
+exec_always --no-startup-id "conky -c ~/.config/conky/conkyrc"
+exec_always --no-startup-id "conky -dq -c "
 
 # Network Manager applet
 exec --no-startup-id nm-applet

@@ -42,6 +42,25 @@
       - vim
       - xterm
       - brasero
+      - pip
+      - lm_sensors
+      - compton
+      - shutter
+      - conky
+      - numlockx
+
+   - name: add sublime_text rpm
+     shell: rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+   - name: Add Sublime Text repo
+     shell:  'dnf config-manager \
+       --add-repo \
+       https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo'
+
+   - name: Install Sublime Text
+     dnf:
+       name: sublime-text
+       state: latest
 
 
    - name: check fedora version

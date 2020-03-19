@@ -46,6 +46,12 @@
         path: i3status
         create: true
         force: true
+
+    #conky
+    ~/.config/conky:
+        path: conky/
+        create: true
+        force: true
    
     #TOUCHPAD AND KEYBOARD    
     /etc/X11/xorg.conf.d/50-synaptics.conf:

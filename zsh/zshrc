@@ -66,6 +66,9 @@ PATH=/usr/sbin:$PATH
 PATH=/opt/sublime_text_3:$PATH
 PATH=/opt/pebble-dev/bin:$PATH
 
+#Don't know why but fr fortunes don't seem to get into path by themselves
+PATH=/usr/local/share/games/fortunes:$PATH
+
 export PATH
 
 source $ZSH/oh-my-zsh.sh
