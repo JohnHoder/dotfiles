@@ -3,7 +3,7 @@
 # Final init script executed on login shell - in essence late .zprofile
 
 ### Print fortune [french law related] on login shell
-[ -x /usr/bin/fortune ] && fortune droit
+[ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
 
 ### start X on tty1 + fix sound bug on some machines
 if [[ "$(tty)" == '/dev/tty1' ]]; then

@@ -48,6 +48,7 @@
       - shutter
       - conky
       - numlockx
+      - telegram-desktop
 
    - name: add sublime_text rpm
      shell: rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg

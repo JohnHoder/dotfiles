@@ -27,7 +27,7 @@ exec --no-startup-id "conky -c ~/.config/conky/rightpanel/conkyrc_rightpanel"
 #################                          compton of i3wm                                          #################
 #####################################################################################################################
 
-#if you want transparency on non-focused windows, ...
+# Start Compton, for transparency on non-focused windows, with background blur effect
 exec_always --no-startup-id compton --blur-background --config ~/.config/i3/compton.conf
 
 # Network Manager applet

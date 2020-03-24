@@ -23,7 +23,7 @@ default_shade_color red
 default_outline_color white
 
 alignment top_right
-gap_x 0
+gap_x 7
 gap_y -55
 
 stippled_borders 3
@@ -32,7 +32,7 @@ border_width 5
 
 no_buffers no
 uppercase no
-cpu_avg_samples 2
+#cpu_avg_samples 2
 net_avg_samples 1
 #override_utf8_locale yes
 use_spacer right
@@ -50,24 +50,30 @@ Uptime $alignr${uptime_short}
 #File System $alignr${fs_type}
 
 ${font Arial:bold:size=10}${color #3b71a1}NETWORK ${color #3b71a1}${hr 2}
-$font${color #41418D}Public addr: $alignr ${execi 1800 curl http://smart-ip.net/myip} ${offset 100}
+$font${color #41418D}Public addr: $alignr ${execi 1800 curl http://smart-ip.net/myip} ${offset 1}
 #
-$font${color #40428D}WLAN addr: $alignr ${addr wlp13s0}
-$font${color #40428D}ETHERNET addr: $alignr ${addr enp14s0}
+$font${color #40428D}WLAN addr: $alignr ${addr wlp13s0} ${offset 1}
+$font${color #40428D}ETHERNET addr: $alignr ${addr enp14s0} ${offset 1}
 #
 ${color orange}${voffset 2}${hr 1}
 #
-${font Arial:bold:size=10}${color #3b71a1}PROCESSORS ${color #3b71a1}${hr 2}
-$font${color DimGray}${color DimGray}${execpi 1 sensors | grep 'Package id 0' | cut -c 1-18}°C
-$font${color DimGray}Core1 ${cpu cpu1}% ${cpubar cpu1}
-Freq: ${freq 1}MHz $alignr Temp1: ${execpi 1 sensors | grep 'Core 0' | cut -c 14-18}°C
-Core2 ${cpu cpu2}% ${cpubar cpu2}
-Freq: ${freq 2}MHz $alignr Temp2: ${execpi 1 sensors | grep 'Core 1' | cut -c 14-18}°C
-Core3 ${cpu cpu3}% ${cpubar cpu3}
-Freq: ${freq 3}MHz $alignr Temp3: ${execpi 1 sensors | grep 'Core 2' | cut -c 14-18}°C
-Core4 ${cpu cpu4}% ${cpubar cpu4}
-Freq: ${freq 4}MHz $alignr Temp4: ${execpi 1 sensors | grep 'Core 3' | cut -c 14-18}°C
-
+#${font Arial:bold:size=10}${color #3b71a1}PROCESSORS ${color #3b71a1}${hr 2}
+#$font${color DimGray}${color DimGray}${execpi 1 sensors | grep 'Package id 0' | cut -c 1-18}°C
+#$font${color DimGray}Core1 ${cpu cpu1}% ${cpubar cpu1}
+#Freq: ${freq 1}MHz $alignr Temp1: ${execpi 1 sensors | grep 'Core 0' | cut -c 14-18}°C
+#Core2 ${cpu cpu2}% ${cpubar cpu2}
+#Freq: ${freq 2}MHz $alignr Temp2: ${execpi 1 sensors | grep 'Core 1' | cut -c 14-18}°C
+#Core3 ${cpu cpu3}% ${cpubar cpu3}
+#Freq: ${freq 3}MHz $alignr Temp3: ${execpi 1 sensors | grep 'Core 2' | cut -c 14-18}°C
+#Core4 ${cpu cpu4}% ${cpubar cpu4}
+#Freq: ${freq 4}MHz $alignr Temp4: ${execpi 1 sensors | grep 'Core 3' | cut -c 14-18}°C
+#
+${font Arial:bold:size=10}${color #3b71a1}CPU ${color #3b71a1} ${cpu}% ${hr 2}
+${voffset -10}
+${goto 40}${cpugraph 26,190 FFFFFF FFFFFF -l}
+#${goto 40}Cpu:${alignr 39}${cpu}%
+#
+${voffset -10}
 ${color #3b71a1}CPU Temperature:${color #3b71a1}${hr 2}
 $font${color DimGray}${color DimGray}${execpi 1 sensors | grep 'Core 0' | cut -c 14-18}°C
 #
@@ -131,6 +137,8 @@ ${image ~/.config/conky/rightpanel/images/icons_weather.png -p 190,785 -s 40x40}
 ${voffset -60}
 ${color orange}${voffset 2}${hr 1}
 #
-${color1}${font Oswald:size=10:bold}FORTUNE ${color2} ${hr 2}
-${color3}${font Arial:size=10}${execi 150 fortune /usr/local/share/games/fortunes/droit | fmt -w 40}
+#
+#
+${font Arial:bold:size=10}${color #3b71a1}FORTUNE ${color #3b71a1} ${hr 2}
+$font${color DimGray}${execi 150 fortune | fmt -w 46}
 

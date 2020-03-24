@@ -10,7 +10,7 @@ times = datetime.datetime.now()
 API_key = 'f68237332758a41ef7a6e1e737175dde'    # API-key https://openweathermap.org/
 owm = pyowm.OWM(API_key, language='ru')
 
-sity = 'Лондон'  # you location sity
+sity = 'Гавиржов'  # you location sity
 observation = owm.weather_at_place(sity)
 w = observation.get_weather()
 temperature = w.get_temperature('celsius')['temp']
