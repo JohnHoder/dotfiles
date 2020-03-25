@@ -20,8 +20,6 @@ font pango:Inconsolata 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Run conky
-exec --no-startup-id "conky -c ~/.config/conky/rightpanel/conkyrc_rightpanel"
 
 #####################################################################################################################
 #################                          compton of i3wm                                          #################
@@ -39,6 +37,10 @@ exec --no-startup-id "udiskie --tray"
 exec_always "~/.config/i3/autoxrandr.sh"
 # Move workspace to side monitor and back
 bindsym $mod+Control+m move workspace to output left
+
+# Run conky
+exec --no-startup-id "conky -d -c ~/.config/conky/rightpanel/conkyrc_rightpanel"
+exec --no-startup-id "conky -d -c ~/.config/conky/trello/trelloconkyrc"
 
 bindsym Ctrl+1 exec "setxkbmap -layout us"
 bindsym Ctrl+2 exec "setxkbmap -layout cz"
@@ -58,6 +60,10 @@ set $menu dmenu_run -sb '#BB5000'
 # start a terminal
 set $terminal gnome-terminal
 bindsym $mod+Return exec /usr/bin/urxvt
+
+# start a terminal
+set $browser firefox
+bindsym $mod+i exec "~/.config/i3/runfirefox.sh"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -159,9 +165,9 @@ bindsym $mod+Shift+r restart
 set $exit_mode Exit: [S]uspend/[L]ogout/[R]eboot/[P]oweroff
 mode "$exit_mode" {
     bindsym l exit
-    bindsym r exec systemctl reboot
-    bindsym p exec systemctl poweroff
-    bindsym s exec systemctl suspend -i
+    bindsym r exec "~/.config/i3/autoxrandr.sh"; exec systemctl reboot
+    bindsym p exec "~/.config/i3/autoxrandr.sh"; systemctl poweroff
+    bindsym s exec "~/.config/i3/autoxrandr.sh"; systemctl suspend
 
     bindsym Escape mode "default"
 }
@@ -272,4 +278,3 @@ bindsym $mod+End exec "i3lock -ti ~/.config/i3/wallpapers/bg.png"
 bindsym $mod+Ctrl+Shift+1 exec "gnome-terminal -x bash -c 'cd ~/muni1/ && python muni_seminars_threaded.py; read -n1;'"
 bindsym $mod+Ctrl+Shift+2 exec "gnome-terminal -x bash -c 'cd ~/muni2_1/ && python muni_seminars_threaded.py; read -n1;'"; exec "gnome-terminal -x bash -c 'cd ~/muni2_2/ && python muni_seminars_threaded.py; read -n1;'"
 bindsym $mod+Ctrl+Shift+3 exec "gnome-terminal -x bash -c 'cd ~/muni3/ && python muni_seminars_threaded.py; read -n1;'"
-
