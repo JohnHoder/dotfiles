@@ -12,7 +12,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual yes
 own_window_argb_value 145
 double_buffer yes
-minimum_size 240 5
+minimum_size 240 1600
 maximum_width 500
 draw_shades no
 draw_outline no
@@ -24,7 +24,7 @@ default_outline_color white
 
 alignment top_right
 gap_x 7
-gap_y -55
+gap_y 23
 
 stippled_borders 3
 border_inner_margin 4
@@ -124,7 +124,7 @@ ${font Arial:bold:size=10}${color #3b71a1}FINANCE ${color #3b71a1}${hr 2}
 #${execp pwd}
 #
 # This only gets data and saves them to file
-$font${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_finance/cbr_parser.py}
+#$font${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_finance/cbr_parser.py}
 # This displays them
 $font${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_finance/usdeuro.txt}
 #

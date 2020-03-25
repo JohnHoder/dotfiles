@@ -30,7 +30,7 @@ default_outline_color white
 
 alignment top_left
 gap_x 7
-gap_y 15
+gap_y 23
 
 stippled_borders 3
 border_inner_margin 4
