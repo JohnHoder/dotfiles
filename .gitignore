@@ -1,2 +1,6 @@
 *.retry
 newsbeuter/cache.db
+conky/trello/conky_finance/usdeuro.txt
+conky/rightpanel/conky_weather/weather.txt
+conky/rightpanel/conky_weather/images/icons_weather.png
+conky/trello/trello.txt
