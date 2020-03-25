@@ -26,42 +26,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# xinitrc-common should noramlly exist on fedora, so the elifs' content will be skipped
-# Execute LXSESSION (i3)
-if [ -f /etc/X11/xinit/xinitrc-common ]; then
-# fedora
-	. /etc/X11/xinit/xinitrc-common
-	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
-elif [ -x /etc/X11/xinit/Xsession ]; then
-# fedora
-	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/xinit/Xsession \"$LXSESSION\""
-elif [ -x /etc/X11/Xsession ]; then
-# mandriva, debian, ubuntu
-	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/Xsession \"$LXSESSION\""
-elif [ -x /etc/X11/xinit/xinitrc ]; then
-#suse
-	export WINDOWMANAGER=$LXSESSION
-	exec $SSH_AGENT /bin/sh -c "exec -l bash -c /etc/X11/xinit/xinitrc"
-else
-# unknown, user should custom /etc/lxdm/xinitrc self
-	if [ -x /etc/lxdm/xinitrc ]; then
-		. /etc/lxdm/xinitrc "$LXSESSION"
-	fi
-	if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-		for f in /etc/X11/xinit/xinitrc.d/* ; do
-			[ -x "$f" ] && . "$f"
-		done
-		unset f
-	fi
-
-	if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS";
-	then
-		eval "$(dbus-launch --sh-syntax --exit-with-session)"
-	fi
-
-	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
-fi
-
 
 # include sbin in PATH
 if [ -d "/sbin" ] ; then
@@ -98,4 +62,41 @@ if [ "$TERM" = "linux" ]; then
     printf "\e]PE71bebe" # color14
     printf "\e]PFffffff" # color15
 #   clear # removes artefacts but also removes /etc/{issue,motd}
+fi
+
+
+# xinitrc-common should noramlly exist on fedora, so the elifs' content will be skipped
+# Execute LXSESSION (i3)
+if [ -f /etc/X11/xinit/xinitrc-common ]; then
+# fedora
+	. /etc/X11/xinit/xinitrc-common
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
+elif [ -x /etc/X11/xinit/Xsession ]; then
+# fedora
+	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/xinit/Xsession \"$LXSESSION\""
+elif [ -x /etc/X11/Xsession ]; then
+# mandriva, debian, ubuntu
+	exec $SSH_AGENT /bin/sh -c "exec /etc/X11/Xsession \"$LXSESSION\""
+elif [ -x /etc/X11/xinit/xinitrc ]; then
+#suse
+	export WINDOWMANAGER=$LXSESSION
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c /etc/X11/xinit/xinitrc"
+else
+# unknown, user should custom /etc/lxdm/xinitrc self
+	if [ -x /etc/lxdm/xinitrc ]; then
+		. /etc/lxdm/xinitrc "$LXSESSION"
+	fi
+	if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+		for f in /etc/X11/xinit/xinitrc.d/* ; do
+			[ -x "$f" ] && . "$f"
+		done
+		unset f
+	fi
+
+	if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS";
+	then
+		eval "$(dbus-launch --sh-syntax --exit-with-session)"
+	fi
+
+	exec $SSH_AGENT /bin/sh -c "exec -l bash -c \"$LXSESSION\""
 fi

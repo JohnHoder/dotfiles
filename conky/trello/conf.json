@@ -1,0 +1,52 @@
+/*
+    ########### GLOBAL CONFIGURATION ############
+
+    This conf should be valid json (except the comments blocks that will be tidied)
+
+
+    appkey and token (see trello api doc to get yours)
+    CHANGE THIS !!!!! (otherwise you will see my fantastic TodoList)
+*/
+
+{
+"appkey" : "ef6c586ee82c196222916db5d54522a4",
+"secret" : "be1cc7bd48b489911bc82e628a7fef28cd1c21a79c520fc9c35fb49dd3aabc52",
+"token" : "920d84a90699fcd9d7eea69e80424ecb9ede166100efa1494125fa56e5c5903f",
+/*
+    ########### trello2txt CONFIGURATION ############
+
+    Board id (see Trello url)
+    CHANGE THIS !!!!!
+*/
+"board" : "jx55ynwQ",
+
+/* Possible behaviour*/
+"BY_COLOR" : 0,
+"BY_NUMBER" : 1,
+/*
+    list here the name of  lists to be monitored and the desired sorting behaviour for each list
+    BY_COLOR: red items first, then orange then others
+    BY_DATE: by due date
+*/
+"toanalyse" : {
+    "Ежедневный план" : "BY_DATE",
+    "PrF - plnění" : "BY_DATE",
+    "Русский язык - словарь" : "BY_DATE",
+    "Français - le vocabulaire" : "BY_DATE",
+    "Sonstiges" : "BY_DATE"
+},
+
+/* IF you choose a "by date" behaviour, the number of cards to retrieve*/
+"BY_DATE_MAX_CARDS" : 10,
+/*
+    color prefix
+    List the card colors you want to display
+    the dic value is a prefix that will be added to the card text in the rendered list
+    set an empty dic to display all cards without prefix
+*/
+"COLOR_TO_DISPLAY" :  {
+/*    "red" : "!",
+    "orange" : "" */
+}
+
+}
