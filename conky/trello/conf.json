@@ -37,7 +37,7 @@
 },
 
 /* IF you choose a "by date" behaviour, the number of cards to retrieve*/
-"BY_DATE_MAX_CARDS" : 10,
+"BY_DATE_MAX_CARDS" : 100,
 /*
     color prefix
     List the card colors you want to display

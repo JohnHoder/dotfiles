@@ -18,7 +18,7 @@ own_window_transparent no
 own_window_class Conky
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual yes
-own_window_argb_value 145
+own_window_argb_value 185
 double_buffer yes
 
 draw_shades no
@@ -78,35 +78,8 @@ ${voffset -20}
 ${font Sans:size=9}${texeci 600 python ~/.config/conky/trello/trello2txt.py ~/.config/conky/trello/conf.json -d ~/.config/conky/trello/trello.txt }
 #
 #
-${font Sans:size=9}${if_match "${texeci 10 sed -n '1p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '1p' ~/tmp/  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '2p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '2p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '3p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '3p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '4p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '4p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '5p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '5p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '6p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '6p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '7p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '7p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '8p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '8p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '9p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '9p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '10p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '10p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '11p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '11p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '12p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '12p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '13p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '13p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '14p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '14p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '15p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '15p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '16p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '16p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '17p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '17p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '18p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '18p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '19p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '19p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '20p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '20p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '21p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '21p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '22p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '22p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '23p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '23p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '24p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '24p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '25p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '25p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '26p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '26p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '27p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '27p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '28p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '28p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '29p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '29p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '30p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '30p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${font Sans:size=9}${if_match "${texeci 10 sed -n '31p' ~/.config/conky/trello/trello.txt  | cut -c 1-1}" == "!"}${color5}${else}${color2}${endif}${texeci 10 sed -n '31p' ~/.config/conky/trello/trello.txt  | cut -c 1-70}
-${color1}${font Sans:size=9}${texeci 10 echo `wc -l ~/.config/conky/trello/trello.txt | cut -d ' ' -f1`-31 | bc -l | sed 's/-.*/0/' | awk '{if ($1!=0){print $1,"more left..."}}'}
+# Limit chars to 70 per line
+${font Sans:size=9}${color2}${texeci 10 head -n 70 ~/.config/conky/trello/trello.txt | cut -c 1-70}
+#
+# If more than 50 lines, print "more left"
+${color1}${font Sans:size=9}${texeci 10 echo `wc -l ~/.config/conky/trello/trello.txt | cut -d ' ' -f1`-70 | bc -l | sed 's/-.*/0/' | awk '{if ($1!=0){print $1,"more left..."}}'}
