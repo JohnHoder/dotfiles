@@ -11,7 +11,7 @@ export ZLOGIN=true
 if [[ "$(tty)" == '/dev/tty1' ]]; then
 	$(startx i3)
 	# > /dev/null 2>&1 = no output on the screen
-	amixer -D pulse sset Master on > /dev/null 2>&1
+	$(amixer -D pulse sset Master on) > /dev/null 2>&1
 fi
 
 

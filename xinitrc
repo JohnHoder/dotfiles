@@ -18,7 +18,6 @@ fi
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-
 #include sbin in PATH
 if [ -d "/sbin" ] ; then
     PATH="/sbin:$PATH"
