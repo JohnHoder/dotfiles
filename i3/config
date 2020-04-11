@@ -30,7 +30,7 @@ exec_always --no-startup-id compton --blur-background --config ~/.config/i3/comp
 
 # Network Manager applet
 exec --no-startup-id nm-applet
-#udiskie applet
+# Udiskie applet
 exec --no-startup-id "udiskie --tray"
 
 # At each restart take care of possible secondary monitor
