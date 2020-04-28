@@ -1,7 +1,7 @@
 # **DOTFILES**
 
 ## HOW TO USE
-#### You have to have **Ansible** and **Git** installed on your system to use these scripts.
+#### You need to have **Ansible** and **Git** installed on your system to use the installation scripts.
 
     sudo dnf install ansible git
     
@@ -10,6 +10,8 @@
     cd dotfiles && git remote 'set-url' --push origin git@github.com:JohnHoder/dotfiles.git
     
     sudo ./setupansible.sh
-    sudo ./setupdotfiles.sh
-    chsh -s /usr/bin/zsh
+    (sudo) ./setupdotfiles.sh  -> sudo will install the dotfiles for sudo assigned user (root)
+
+#### NOTE:
+    chsh -s /usr/bin/zsh is not neccessarily needed as zsh is getting called from .bashrc
 
