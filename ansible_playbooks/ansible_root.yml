@@ -2,7 +2,21 @@
 - hosts: all
   become_user: root
   become: true
+  vars:
+     ansible_python_interpreter: python3
   tasks:
+  
+   - name: check fedora version
+     shell: rpm -E %fedora
+     register: current_fedora
+
+   - name: Setting up ffmpeg
+     dnf: name={{item}} state=present
+     with_items:
+       - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ current_fedora.stdout }}.noarch.rpm"
+       - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ current_fedora.stdout }}.noarch.rpm"
+
+
    - name: Installing packages
      dnf: name={{item}} state=present
      with_items:
@@ -10,6 +24,7 @@
       - zathura-pdf-mupdf
       - zathura
       - zsh
+      - nano
       - zsh-syntax-highlighting
       - w3m
       - udiskie
@@ -51,6 +66,8 @@
       - telegram-desktop
       - pcmanfm
       - unrar
+      - ffmpeg
+      - ffmpeg-devel
 
    - name: add sublime_text rpm
      shell: rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
@@ -64,21 +81,6 @@
      dnf:
        name: sublime-text
        state: latest
-
-
-   - name: check fedora version
-     shell: rpm -E %fedora
-     register: current_fedora
-
-
-   - name: Setting up ffmpeg
-     dnf: name={{item}} state=present
-     with_items:
-       - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ current_fedora.stdout }}.noarch.rpm"
-       - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ current_fedora.stdout }}.noarch.rpm"
-       - ffmpeg
-       - ffmpeg-devel
-
 
 #   - name: Downloading oh-my-zsh
 #     shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
