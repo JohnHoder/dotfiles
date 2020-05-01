@@ -16,7 +16,7 @@ Recursive repo clone (`git clone --recursive https://github.com/JohnHoder/dotfil
 ## To push changes to this repo
 For HTTPS:
 
-    git remote 'set-url' --push origin git@github.com:JohnHoder/dotfiles.git
+    git remote set-url origin https://github.com/JohnHoder/dotfiles.git
 
 For SSH:
 
