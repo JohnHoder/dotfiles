@@ -69,7 +69,7 @@
       - ffmpeg
       - ffmpeg-devel
       - vlc
-      - java-1.8.0-openjdk
+      - java-11-openjdk
 
    - name: add sublime_text rpm
      shell: rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg

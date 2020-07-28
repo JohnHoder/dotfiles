@@ -7,6 +7,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Set JAVA_HOME
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+
+# Create alias for chromeproxy
+alias chromeproxy='chromium-browser --proxy-server="localhost:8080"'
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -41,3 +47,4 @@ if [[ $- == *i* ]]; then
     export SHELL=zsh
     exec zsh -l
 fi
+
