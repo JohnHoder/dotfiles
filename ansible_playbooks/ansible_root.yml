@@ -18,6 +18,7 @@
 
 
    - name: Installing packages
+     ignore_errors: true
      dnf: name={{item}} state=present
      with_items:
       - git
@@ -71,8 +72,8 @@
       - vlc
       - java-11-openjdk
 
-   - name: add sublime_text rpm
-     shell: rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+   - name: Add Sublime Text rpm
+     shell: 'rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
 
    - name: Add Sublime Text repo
      shell:  'dnf config-manager \
@@ -96,22 +97,23 @@
 #   - name: Changing shell to ZSH
 #     shell: chsh -s /usr/bin/zsh
 
-   - name: disable gdm
+   - name: Disable gdm
      shell: systemctl disable gdm.service
 
    - name: Downloading and compiling fortunes-fr
-     shell: wget https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz -O ~/fortunes-fr.tar.gz
+     shell: 'wget https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz -O ~/fortunes-fr.tar.gz'
    - name: Extracting fortunes-fr
-     shell: tar -zxvf ~/fortunes-fr.tar.gz -C ~/
+     shell: 'tar -zxvf ~/fortunes-fr.tar.gz -C ~/'
    - name: Install fortunes-fr
-     shell: cd ~/fortunes-fr-0.02; ./configure; make; make install
+     shell: 'cd ~/fortunes-fr-0.02; ./configure; make; make install'
    - name: Clean fortunes-fr
-     shell: rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz
+     shell: 'rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz'
 
    - name: Setup youtube-dl
-     shell: wget https://yt-dl.org/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+x /usr/local/bin/youtube-dl
+     shell: 'wget https://yt-dl.org/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+x /usr/local/bin/youtube-dl'
 
-   - pip:
+   - name: Install pip modules
+     pip:
        name:
          - bottle
          - jsmin 
@@ -119,3 +121,4 @@
          - bs4
          - lxml
          - requests
+
