@@ -9,9 +9,12 @@
      shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
      args:
        warn: false
+     ignore_errors: true
 
    - name: Downloading zsh-completion
      shell: git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+     register: zsh_completion
+     ignore_errors: true
 
 #   - name: Downloading zsh-syntax-highlighting
 #     shell: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
