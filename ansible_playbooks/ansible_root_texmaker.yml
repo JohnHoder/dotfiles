@@ -19,4 +19,5 @@
       - texlive-babel-russian
       - texlive-babel-german
       - texlive-babel-french
+      - texlive-cm-lgc
 
