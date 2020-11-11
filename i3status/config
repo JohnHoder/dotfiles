@@ -2,23 +2,26 @@ general {
         colors = true
         interval = 5
 	output_format = i3bar
+        markup = "pango"
 }
 
 #order += "ipv6"
 #order += "disk /"
 order += "run_watch DHCP"
-#order += "run_watch VPNC"
-#order += "path_exists VPN"
+#order += "run_watch VPN_tap"
 order += "wireless wlp13s0"
 order += "ethernet enp14s0"
 order += "volume master"
 order += "battery 0"
 order += "cpu_temperature 0"
-#order += "load"
 order += "cpu_usage"
 order += "tztime berlin"
 
 
+tztime berlin {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "Europe/Berlin"
+}
 
 wireless wlp13s0 {
         format_up = "W: (%quality [%essid], %bitrate) %ip"
@@ -47,23 +50,9 @@ run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
 }
 
-run_watch VPNC {
-        # file containing the PID of a vpnc process
-        pidfile = "/var/run/vpnc/pid"
-}
-
-path_exists VPN {
+run_watch VPN_tap {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        path = "/proc/sys/net/ipv4/conf/tun0"
-}
-
-tztime berlin {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Berlin"
-}
-
-load {
-        format = "%5min"
+        pidfile = "/sys/class/net/tap0/dev_id"
 }
 
 cpu_usage {
@@ -72,7 +61,7 @@ cpu_usage {
 
 cpu_temperature 0 {
         format = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp2_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
 }
 
 disk "/" {
@@ -80,7 +69,7 @@ disk "/" {
 }
 
 volume master {
-        format = "♪: %volume"
+        format = "♪: <span color='#BBBB44'>%volume</span>"
         format_muted = "♪: muted (%volume)"
         device = "default"
         mixer = "Master"
