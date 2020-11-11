@@ -71,6 +71,7 @@
       - ffmpeg-devel
       - vlc
       - java-11-openjdk
+      - audacity
 
    - name: Add Sublime Text rpm
      shell: 'rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
