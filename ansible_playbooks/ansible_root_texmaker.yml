@@ -12,13 +12,21 @@
       - texmaker
       - texlive-pdfcprot
       - texlive-acronym
-      - texlive-babel-czech
       - texlive-titling
       - texlive-collection-langcyrillic
       - texlive-cyrillic
+      - texlive-cm-lgc
+      - texlive-substitutefont
+      - texlive-babel-czech
       - texlive-babel-russian
       - texlive-babel-german
       - texlive-babel-french
-      - texlive-cm-lgc
-      - texlive-substitutefont
-
+      - texlive-babel-slovak
+      - texlive-hyphen-czech
+      - texlive-hyphen-french
+      - texlive-hyphen-german
+      - texlive-hyphen-russian
+      - texlive-hyphen-english
+      - texlive-hyphen-slovak
+      - texlive-ruhyphen
+      - texlive-slantsc
