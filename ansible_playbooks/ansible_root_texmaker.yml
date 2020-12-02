@@ -30,3 +30,5 @@
       - texlive-hyphen-slovak
       - texlive-ruhyphen
       - texlive-slantsc
+      - texlive-paracol
+
