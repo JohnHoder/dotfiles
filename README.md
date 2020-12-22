@@ -7,6 +7,8 @@ You need to have **Ansible** and **Git** installed on your system to use the ins
     sudo dnf install ansible git
 
     git clone https://github.com/JohnHoder/dotfiles.git
+    
+    cd dotfiles/
 
     sudo ./setupansible.sh
     (sudo) ./setupdotfiles.sh   -> sudo will install the dotfiles for sudo assigned user (root)
