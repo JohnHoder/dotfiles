@@ -11,19 +11,21 @@
      register: current_fedora
 
    - name: Setting up ffmpeg
-     dnf: name={{item}} state=present
+     dnf: name={{item}} state=present validate_certs=no disable_gpg_check=yes
      with_items:
        - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ current_fedora.stdout }}.noarch.rpm"
        - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ current_fedora.stdout }}.noarch.rpm"
 
 
+
    - name: Installing packages
-     ignore_errors: true
+     #ignore_errors: true
      dnf: name={{item}} state=present
      with_items:
       - git
       - zathura-pdf-mupdf
       - zathura
+      - make
       - zsh
       - nano
       - zsh-syntax-highlighting
@@ -35,7 +37,6 @@
       - transmission
       - stardict
       - stardict-dic-cs_CZ
-      - rxvt-unicode-256color
       - ranger
       - powertop
       - nmap
