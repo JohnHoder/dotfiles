@@ -9,18 +9,23 @@
    - name: check fedora version
      shell: rpm -E %fedora
      register: current_fedora
+     args:
+       warn: false
 
    - name: Setting up ffmpeg
      dnf: name={{item}} state=present validate_certs=no disable_gpg_check=yes
-     with_items:
+     loop:
        - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ current_fedora.stdout }}.noarch.rpm"
        - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ current_fedora.stdout }}.noarch.rpm"
-
+     become: true
 
 
    - name: Installing packages
      #ignore_errors: true
-     dnf: name={{item}} state=present
+     dnf:
+       name: "{{ item }}"
+       state: present
+       update_cache: true
      with_items:
       - git
       - zathura-pdf-mupdf
@@ -73,9 +78,13 @@
       - vlc
       - java-11-openjdk
       - audacity
+     become: true
+
 
    - name: Add Sublime Text rpm
      shell: 'rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
+     args:
+       warn: false
 
    - name: Add Sublime Text repo
      shell:  'dnf config-manager \
@@ -102,17 +111,32 @@
    - name: Disable gdm
      shell: systemctl disable gdm.service
 
-   - name: Downloading and compiling fortunes-fr
-     shell: 'wget https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz -O ~/fortunes-fr.tar.gz'
-   - name: Extracting fortunes-fr
-     shell: 'tar -zxvf ~/fortunes-fr.tar.gz -C ~/'
+
+   - name: Download and unpack fortunes-fr
+     unarchive:
+       src: https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz
+       dest: ~/
+       remote_src: yes
+
    - name: Install fortunes-fr
      shell: 'cd ~/fortunes-fr-0.02; ./configure; make; make install'
+   #- name: Clean fortunes-fr
+   #  shell: 'rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz'
    - name: Clean fortunes-fr
-     shell: 'rm -rf ~/fortunes-fr-0.02; rm -rf ~/fortunes-fr.tar.gz'
+     file:
+       path: ~/fortunes-fr-0.02
+       state: absent
 
-   - name: Setup youtube-dl
-     shell: 'wget https://yt-dl.org/latest/youtube-dl -O /usr/local/bin/youtube-dl && chmod a+x /usr/local/bin/youtube-dl'
+   - name: Download youtube-dl
+     get_url:
+       url: https://yt-dl.org/latest/youtube-dl
+       dest: /usr/local/bin/youtube-dl
+
+   - name: chmod youtube-dl
+     file:
+       path: /usr/local/bin/youtube-dl
+       state: file
+       mode: u+rwx,g+rx,o+rx
 
    - name: Install pip modules
      pip:
