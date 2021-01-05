@@ -28,6 +28,9 @@ font pango:Inconsolata 10
 # Start Compton, for transparency on non-focused windows, with background blur effect
 exec_always --no-startup-id compton --blur-background --config ~/.config/i3/compton.conf
 
+# Map touchpad tapping
+exec --no-startup-id "~/.config/i3/tap-to-click.sh"
+
 # Network Manager applet
 exec --no-startup-id nm-applet
 # Udiskie applet
