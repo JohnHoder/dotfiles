@@ -41,6 +41,9 @@ exec_always "~/.config/i3/autoxrandr.sh"
 # Move workspace to side monitor and back
 bindsym $mod+Control+m move workspace to output left
 
+# Run redshift to to dim and change the display color temp after sunset
+exec --no-startup-id redshift
+
 # Run conky
 exec --no-startup-id "conky -d -c ~/.config/conky/rightpanel/conkyrc_rightpanel"
 exec --no-startup-id "conky -d -c ~/.config/conky/trello/trelloconkyrc"

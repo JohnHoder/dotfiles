@@ -52,6 +52,12 @@
         path: conky/
         create: true
         force: true
+
+    #redshift
+    ~/.config/redshift:
+        path: redshift/
+        create: true
+        force: true
    
     #TOUCHPAD AND KEYBOARD    
     /etc/X11/xorg.conf.d/50-synaptics.conf:
