@@ -4,7 +4,7 @@
 
 export ZLOGIN=true
 
-### Print fortune [french law related] on login shell
+### Print fortune [french] on login shell (add "droit" if you want to see only law related quotes)
 [ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
 
 ### start X on tty1 + fix sound bug on some machines
