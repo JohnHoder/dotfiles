@@ -97,6 +97,12 @@
     ~/.vimrc:
         path: vim/vimrc
 
+    #w3m
+    ~/.w3m:
+        path: w3m/
+        create: true
+        force: true
+
 - shell:
     - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"]
     - [sh -c "im +PluginInstall +qallvim" &]
