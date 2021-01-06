@@ -61,19 +61,19 @@
    
     #TOUCHPAD AND KEYBOARD    
     /etc/X11/xorg.conf.d/50-synaptics.conf:
-        path: 50-synaptics.conf
+        path: etc/50-synaptics.conf
         create: true
         force: true
     /etc/X11/xorg.conf.d/00-keyboard.conf:
-        path: 00-keyboard.conf
+        path: etc/00-keyboard.conf
         create: true
         force: true
     /etc/X11/xorg.conf.d/20-intel.conf:
-        path: 20-intel.conf
+        path: etc/20-intel.conf
         create: true
         force: true
     /etc/X11/xorg.conf.d/30-touchpad.conf:
-        path: 30-touchpad.conf
+        path: etc/30-touchpad.conf
         create: true
         force: true
 
