@@ -63,6 +63,7 @@
       - xbacklight
       - fortune-mod
       - vim
+      - vifm
       - xterm
       - brasero
       - pip

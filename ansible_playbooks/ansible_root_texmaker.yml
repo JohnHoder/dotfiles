@@ -31,4 +31,4 @@
       - texlive-ruhyphen
       - texlive-slantsc
       - texlive-paracol
-
+      - texlive-textpos
