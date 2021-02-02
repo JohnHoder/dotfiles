@@ -32,3 +32,5 @@
       - texlive-slantsc
       - texlive-paracol
       - texlive-textpos
+      - texlive-svg
+
