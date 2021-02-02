@@ -33,4 +33,4 @@
       - texlive-paracol
       - texlive-textpos
       - texlive-svg
-
+      - texlive-wrapfig
