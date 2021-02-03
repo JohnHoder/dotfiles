@@ -34,3 +34,4 @@
       - texlive-textpos
       - texlive-svg
       - texlive-wrapfig
+      - texlive-hyphenat
