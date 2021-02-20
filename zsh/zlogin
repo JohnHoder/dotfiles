@@ -1,17 +1,10 @@
-# vim:ft=zsh:
-#
-# Final init script executed on login shell - in essence late .zprofile
+#!/bin/bash
 
-export ZLOGIN=true
+# .zlogin does not get called from BASH, and .profile does not get called from ZSH
+# For this reason we ensure reciprocity. BASH is our default shell, so we call .profile also when zsh is in action.
 
-### Print fortune [french] on login shell (add "droit" if you want to see only law related quotes)
-[ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
-
-### start X on tty1 + fix sound bug on some machines
-if [[ "$(tty)" == '/dev/tty1' ]]; then
-	$(startx i3)
-	# > /dev/null 2>&1 = no output on the screen
-	$(amixer -D pulse sset Master on) > /dev/null 2>&1
+# Do not do it for root
+if [[ "$EUID" -ne 0 ]]; then
+    source ~/.profile
 fi
-
 

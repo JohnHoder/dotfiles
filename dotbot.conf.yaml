@@ -12,14 +12,37 @@
       force: true
 
 - link:
-    ~/.gitconfig:
-        path: gitconfig
-        force: true
+    #TOUCHPAD AND KEYBOARD    
+    /etc/X11/xorg.conf.d/50-synaptics.conf:
+        path: etc/50-synaptics.conf
         create: true
+        force: true
+    /etc/X11/xorg.conf.d/00-keyboard.conf:
+        path: etc/00-keyboard.conf
+        create: true
+        force: true
+    /etc/X11/xorg.conf.d/20-intel.conf:
+        path: etc/20-intel.conf
+        create: true
+        force: true
+    /etc/X11/xorg.conf.d/30-touchpad.conf:
+        path: etc/30-touchpad.conf
+        create: true
+        force: true
+
+    # xinitrc
     ~/.xinitrc:
         path: xinitrc
         force: true
         create: true
+
+    #profile
+    ~/.profile:
+        path: profile
+        force: true
+        create: true
+
+    # Xdefaults
     ~/.Xdefaults:
         path: Xdefaults
 
@@ -58,35 +81,17 @@
         path: redshift/
         create: true
         force: true
-   
-    #TOUCHPAD AND KEYBOARD    
-    /etc/X11/xorg.conf.d/50-synaptics.conf:
-        path: etc/50-synaptics.conf
-        create: true
-        force: true
-    /etc/X11/xorg.conf.d/00-keyboard.conf:
-        path: etc/00-keyboard.conf
-        create: true
-        force: true
-    /etc/X11/xorg.conf.d/20-intel.conf:
-        path: etc/20-intel.conf
-        create: true
-        force: true
-    /etc/X11/xorg.conf.d/30-touchpad.conf:
-        path: etc/30-touchpad.conf
-        create: true
-        force: true
 
-    #NEWSBEUTER
+    #newsbeuter
     ~/.newsbeuter:
         path: newsbeuter
         create: true
         force: true
 
-    #UDISKIE
+    #udiskie
     ~/.config/udiskie: udiskie/
 
-    #ZATHURA
+    #zathura
     ~/.config/zathura/zathurarc: zathura/
 
     #ranger
@@ -102,6 +107,12 @@
         path: w3m/
         create: true
         force: true
+
+    #gitconfig
+    ~/.gitconfig:
+        path: gitconfig
+        force: true
+        create: true
 
 - shell:
     - ["git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"]

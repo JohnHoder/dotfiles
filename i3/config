@@ -170,7 +170,7 @@ bindsym $mod+Shift+r restart
 # Exit mode
 set $exit_mode Exit: [S]uspend/[L]ogout/[R]eboot/[P]oweroff
 mode "$exit_mode" {
-    bindsym l exit
+    bindsym l exec_always "~/.config/i3/onexit.sh; exit"
     bindsym r exec "~/.config/i3/onexit.sh; systemctl reboot"
     bindsym p exec "~/.config/i3/onexit.sh; systemctl poweroff"
     bindsym s exec "~/.config/i3/onexit.sh; systemctl suspend"

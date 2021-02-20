@@ -14,7 +14,7 @@ You need to have **Ansible** and **Git** installed on your system to use the ins
     (sudo) ./setupdotfiles.sh   -> sudo will install the dotfiles for sudo assigned user (root)
 
 ## Note
-Command `chsh -s /usr/bin/zsh` is not neccessarily needed as `zsh` is getting called from `.bashrc`.
+Running command `chsh -s /usr/bin/zsh` is not needed as `zsh` is getting called from `.bashrc`.
 Recursive repo clone (`git clone --recursive https://github.com/JohnHoder/dotfiles.git`) is not needed. The subrepository `dotbot` will be synced automatically by running `setupdotfiles.sh`.
 
 ## To push changes to this repo
@@ -25,3 +25,10 @@ For HTTPS:
 For SSH:
 
     git remote set-url origin git@github.com:JohnHoder/dotfiles.git
+
+
+## Debug Conky
+
+	conky -D -c ~/.config/conky/rightpanel/conkyrc_rightpanel
+	conky -D -c ~/.config/conky/trello/trelloconkyrc
+	pkill conky

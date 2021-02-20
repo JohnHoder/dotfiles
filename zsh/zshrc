@@ -59,31 +59,11 @@ autoload -U compinit && compinit
 
 # User configuration
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl":$PATH
-PATH=~/bin:$PATH
-PATH=/opt/sdk/platform-tools:$PATH
-PATH=~/pebble-dev/pebble-sdk-4.4.1-linux64/bin:$PATH
-PATH=/usr/sbin:$PATH
-PATH=/opt/sublime_text_3:$PATH
-PATH=/opt/pebble-dev/bin:$PATH
-
-#Don't know why but fr fortunes don't seem to get into path by themselves
-PATH=/usr/local/share/games/fortunes:$PATH
-
-export PATH
-
-source $ZSH/oh-my-zsh.sh
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Do not source these if root
+if [ "$EUID" -ne 0 ]; then
+	source $ZSH/oh-my-zsh.sh
+	source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -107,9 +87,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets line)
 #ZSH_HIGHLIGHT_STYLES[line]='bold'
 #ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
 #ZSH_HIGHLIGHT_STYLES[alias]='fg=blue,bold'
-
-# python ~/.oh-my-zsh/welcome.py
-
 
 man() {
     env \

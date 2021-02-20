@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This file (.xinitrc) is run with startx
+# If startx has no parameter, LXSESSION will be set to i3
+
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
 # umask 022
@@ -33,7 +36,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# xinitrc-common should noramlly exist on fedora, so the elifs' content will be skipped
+# xinitrc-common should normally exist on fedora, so the elifs' content will be skipped
 # Execute LXSESSION (i3)
 if [ -f /etc/X11/xinit/xinitrc-common ]; then
 # fedora
