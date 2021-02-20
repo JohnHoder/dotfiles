@@ -7,17 +7,6 @@
 
 export PROFILE=true
 
-### Print fortune [french] on login shell (add "droit" if you want to see only law related quotes)
-[ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
-
-### Start X on tty1 automatically (without having to type startx)
-### And fix sound bug on some machines
-if [[ "$(tty)" == '/dev/tty1' && "$EUID" -ne 0 ]]; then
-	$(startx i3)
-	# > /dev/null 2>&1 = no output on the screen
-	$(amixer -D pulse sset Master on) > /dev/null 2>&1
-fi
-
 # Set language environment
 export LANG=fr_CH.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -68,3 +57,13 @@ if [ "$TERM" = "linux" ]; then
     #clear # removes artefacts but also removes /etc/{issue,motd}
 fi
 
+### Print fortune [french] on login shell (add "droit" if you want to see only law related quotes)
+[ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
+
+### Start X on tty1 automatically (without having to type startx)
+### And fix sound bug on some machines
+if [[ "$(tty)" == '/dev/tty1' && "$EUID" -ne 0 ]]; then
+	$(amixer -D pulse sset Master on) > /dev/null 2>&1
+	$(startx i3)
+	# > /dev/null 2>&1 = no output on the screen
+fi
