@@ -1,76 +1,87 @@
-#################################
+conky.config = {
+	
+	background = false,
 
-#antialising et font
-use_xft yes
-xftfont Sans:size=8
-xftalpha 1
+	--antialising et font
+	use_xft = true,
+	font = 'Sans:size=8',
+	xftalpha = 1,
 
-#update each x seconds
-update_interval 5
+	--update each x seconds
+	update_interval = 5,
 
-#run forever
-total_run_times 0
+	--run forever
+	total_run_times = 0,
 
-#needs compositing enabled in window manager
-own_window yes
-own_window_type override
-own_window_transparent no
-own_window_class Conky
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_argb_visual yes
-own_window_argb_value 185
-double_buffer yes
+	--needs compositing enabled in window manager
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = false,
+	own_window_class = 'Conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 185,
+	double_buffer = true,
 
-draw_shades no
-draw_outline no
-draw_borders no
-default_color gray #white
-default_shade_color red #black
-default_outline_color white
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	default_color = 'gray',--white
+	default_shade_color = 'red',--black
+	default_outline_color = 'white',
 
-alignment top_left
-gap_x 7
-gap_y 23
+	alignment = 'top_left',
+	gap_x = 7,
+	gap_y = 23,
 
-stippled_borders 3
-border_inner_margin 4
-border_width 5
+	stippled_borders = 3,
+	border_inner_margin = 4,
+	border_width = 5,
 
-uppercase no
-cpu_avg_samples 1
-net_avg_samples 1
-override_utf8_locale yes
-use_spacer right
+	uppercase = false,
+	cpu_avg_samples = 1,
+	net_avg_samples = 1,
+	override_utf8_locale = true,
+	use_spacer = 'right',
 
+	--################################
 
-#################################
+	--for execbar
+	default_bar_width = 80,
+	default_bar_height = 5,
 
+	minimum_width = 150,
+	minimum_height = 1600,
+	maximum_width = 1000,
+	text_buffer_size = 2048,
 
+	draw_graph_borders = false,
 
-#for execbar
-default_bar_size 80 5
-
-minimum_size 150 1600
-maximum_width 1000
-text_buffer_size 2048
-
-draw_graph_borders no
-
-
-no_buffers yes
+	no_buffers = true,
 
 
-#white
-color1         	caeae5 	#white (blue tint)
-color2         	40788c 	#key
-color3         	68b1b8 	#value
-color4         	68b1b8 	#bar
-color5         	a80022 	#red
-color6         	496388 	#light marine blue
-color7         	5A7499 	#lighter marine blue
-color8			6d8390 	#light grey
-color9			30393f	#dark grey
-TEXT
+	--white
+	color1 = '#caeae5',
+	--white (blue tint)
+	color2 = '#40788c',
+	--key
+	color3 = '#68b1b8',
+	--value
+	color4 = '#68b1b8',
+	--bar
+	color5 = '#a80022',
+	--red
+	color6 = '#496388',
+	--light marine blue
+	color7 = '#5A7499',
+	--lighter marine blue
+	color8 = '#6d8390',
+	--light grey
+	color9 = '#30393f',
+	--dark grey
+};
+
+conky.text = [[
 
 ${font Sans:size=12}${color7}TRELLO
 #${execp pwd}
@@ -83,3 +94,5 @@ ${font Sans:size=9}${color2}${texeci 10 head -n 70 ~/.config/conky/trello/trello
 #
 # If more than 50 lines, print "more left"
 ${color1}${font Sans:size=9}${texeci 10 echo `wc -l ~/.config/conky/trello/trello.txt | cut -d ' ' -f1`-70 | bc -l | sed 's/-.*/0/' | awk '{if ($1!=0){print $1,"more left..."}}'}
+
+]];

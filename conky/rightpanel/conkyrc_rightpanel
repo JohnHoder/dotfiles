@@ -1,47 +1,50 @@
-background yes
-use_xft yes
-xftfont 123:size=8
-xftalpha 0.1
-update_interval 0.9
-total_run_times 0
-own_window yes
-own_window_type override
-own_window_transparent no
-own_window_class Conky
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_argb_visual yes
-own_window_argb_value 145
-double_buffer yes
-minimum_size 240 1600
-maximum_width 500
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
-default_color gray
-default_shade_color red
-default_outline_color white
+conky.config = {
 
-alignment top_right
-gap_x 7
-gap_y 23
+	-- this is to ease debugging
+	background = false,
+	
+	use_xft = true,
+	font = '123:size=8',
+	xftalpha = 0.1,
+	update_interval = 0.9,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = false,
+	own_window_class = 'Conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+	own_window_argb_value = 145,
+	double_buffer = true,
+	minimum_width = 240, minimum_height = 1600,
+	maximum_width = 500,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	default_color = 'gray',
+	default_shade_color = 'red',
+	default_outline_color = 'white',
 
-stippled_borders 3
-border_inner_margin 4
-border_width 5
+	alignment = 'top_right',
+	gap_x = 7,
+	gap_y = 23,
 
-no_buffers no
-uppercase no
-#cpu_avg_samples 2
-net_avg_samples 1
-#override_utf8_locale yes
-use_spacer right
-text_buffer_size 256
+	stippled_borders = 3,
+	border_inner_margin = 4,
+	border_width = 5,
 
+	no_buffers = false,
+	uppercase = false,
+    --cpu_avg_samples = 2,
+	net_avg_samples = 1,
+    override_utf8_locale = 'no',
+	use_spacer = 'right',
+	text_buffer_size = 256,
+};
 
+conky.text = [[
 
-
-TEXT
 ${font Arial:bold:size=10}${color #3b71a1}${color #3b71a1}System INFO ${color #3b71a1} ${hr 2}
 $font${color DimGray}$sysname $kernel $alignr $machine
 Date $alignr${time %A, %B %e}
@@ -50,8 +53,7 @@ Uptime $alignr${uptime_short}
 #File System $alignr${fs_type}
 
 ${font Arial:bold:size=10}${color #3b71a1}NETWORK ${color #3b71a1}${hr 2}
-$font${color #41418D}Public addr: $alignr ${execi 1800 curl http://smart-ip.net/myip} ${offset 1}
-#
+$font${color #41418D}Public addr: $alignr ${execi 1800 dig +short myip.opendns.com @resolver1.opendns.com} ${offset 1}
 $font${color #40428D}WLAN addr: $alignr ${addr wlp13s0} ${offset 1}
 $font${color #40428D}ETHERNET addr: $alignr ${addr enp14s0} ${offset 1}
 #
@@ -142,3 +144,5 @@ ${color orange}${voffset 2}${hr 1}
 ${font Arial:bold:size=10}${color #3b71a1}FORTUNE ${color #3b71a1} ${hr 2}
 $font${color DimGray}${execi 150 fortune | fmt -w 46}
 
+
+]];
