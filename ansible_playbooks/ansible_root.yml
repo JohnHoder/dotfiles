@@ -80,6 +80,12 @@
       - vlc
       - java-11-openjdk
       - audacity
+      # TeamViewer dependencies
+      - qt5-qtquickcontrols
+      - qt5-qtlocation
+      - qt5-qtsensors
+      - qt5-qtwebchannel
+      - qt5-qtwebkit
      become: true
 
 
