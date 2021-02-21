@@ -103,19 +103,18 @@ ${color orange}${voffset 2}${hr 1}
 #Freq: ${freq 4}MHz $alignr Temp4: ${execpi 1 sensors | grep 'Core 3' | cut -c 14-18}°C
 #
 ${font Arial:bold:size=10}${color #3b71a1}CPU ${color #3b71a1} ${cpu}% ${hr 2}
-${voffset -10}
-${color #3b71a1}${cpugraph 30,125 07CC0D FF0000 -t}	${goto 150}${color #3b71a1}${memgraph 30,123 07CC0D FF0000 -t}
-${goto 40}${cpugraph 26,190 FFFFFF FFFFFF -l}
+${voffset -15}
+${color #3b71a1}${cpugraph 26,240 015469 015469 -l}
 #${goto 40}Cpu:${alignr 39}${cpu}%
 #
-${voffset -10}
+${voffset -17}
 ${color #3b71a1}CPU Temperature:${color #3b71a1}${hr 2}
 $font${color DimGray}${color DimGray}${execpi 1 sensors | grep 'Core 0' | cut -c 14-18}°C
 #
 #${font Arial:bold:size=10}${color #3b71a1}VIDEO ${color #3b71a1}${hr 2}
 #$font${color DimGray}Core1 ${cpu cpu1}% ${cpubar cpu1}
 #Nvidia GPU: ${nvidia temp}°С
-
+#
 ${font Arial:bold:size=10}${color #3b71a1}MEMORY ${color #3b71a1}${hr 2}
 $font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
