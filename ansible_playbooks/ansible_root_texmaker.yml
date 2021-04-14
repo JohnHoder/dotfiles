@@ -35,3 +35,4 @@
       - texlive-svg
       - texlive-wrapfig
       - texlive-hyphenat
+      - texlive-totcount
