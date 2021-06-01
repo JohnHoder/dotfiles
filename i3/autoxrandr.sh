@@ -21,9 +21,9 @@ for output in $(xrandr | grep '\Wconnected' | awk '{ print $1 }'); do
         if [ "${counter}" -eq "0" ]; then
             #echo $counter
             #xrandr --output $lvds --auto --output $output --pos 0x0 --auto --right-of $lvds --primary
-            xrandr --output $output --auto --left-of $lvds --primary
+            xrandr --output $output --auto --right-of $lvds --primary
         elif [ "${counter}" -eq "1" ]; then
-            xrandr --output $output --auto --right-of $lvds
+            xrandr --output $output --auto --left-of $lvds
             #echo $counter
 	fi
         counter=$((counter+1))
