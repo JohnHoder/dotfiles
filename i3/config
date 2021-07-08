@@ -246,6 +246,9 @@ for_window [class="Firefox" title="All-in-One Sidebar – Einstellungen"] floati
 for_window [class="Firefox" title="Downloads hinzufügen"] floating enable
 for_window [class="Firefox" title="Tree Style Tab Konfiguration"] floating enable
 
+for_window [class="Chromium" title="Chromium$"] floating disable
+for_window [class="Chromium" title="Chromium$"] border none
+
 for_window [class="Thunderbird" title="Gespeicherte Passwörter"] floating enable
 for_window [class="Thunderbird" title="Thunderbird-Einstellungen"] floating enable
 
