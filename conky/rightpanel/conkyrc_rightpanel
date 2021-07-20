@@ -160,13 +160,13 @@ ${font Arial:bold:size=10}${color #3b71a1}FINANCE ${color #3b71a1}${hr 2}
 # This only gets data and saves them to file
 #$font${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_finance/cbr_parser.py}
 # This displays them
-$font${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_finance/usdeuro.txt}
+${font Arial:size=10}${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_finance/usdeuro.txt}
 #
 ${font Arial:bold:size=10}${color #3b71a1}WEATHER ${color #3b71a1}${hr 2}
 # This only gets data and saves them to file
-$font${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_weather/weather_parser.py}
+${font Arial:size=10}${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_weather/weather_parser.py}
 # This displays them
-$font${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_weather/weather.txt}
+${font Arial:size=10}${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_weather/weather.txt}
 ${image ~/.config/conky/rightpanel/images/icons_weather.png -p 190,785 -s 40x40}${voffset 30}
 ${voffset -60}
 ${color orange}${voffset 2}${hr 1}

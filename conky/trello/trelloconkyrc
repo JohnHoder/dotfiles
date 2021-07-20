@@ -4,7 +4,7 @@ conky.config = {
 
 	--antialising et font
 	use_xft = true,
-	font = 'Sans:size=8',
+	font = 'Arial:size=8',
 	xftalpha = 1,
 
 	--update each x seconds
@@ -83,16 +83,16 @@ conky.config = {
 
 conky.text = [[
 
-${font Sans:size=12}${color7}TRELLO
+${font Arial:size=12}${color7}TRELLO
 #${execp pwd}
 ${voffset -20}
-${font Sans:size=9}${texeci 600 python ~/.config/conky/trello/trello2txt.py ~/.config/conky/trello/conf.json -d ~/.config/conky/trello/trello.txt }
+${font Arial:size=9}${texeci 600 python ~/.config/conky/trello/trello2txt.py ~/.config/conky/trello/conf.json -d ~/.config/conky/trello/trello.txt }
 #
 #
 # Limit chars to 70 per line
-${font Sans:size=9}${color2}${texeci 10 head -n 70 ~/.config/conky/trello/trello.txt | cut -c 1-70}
+${font Arial:size=9}${color2}${texeci 10 head -n 70 ~/.config/conky/trello/trello.txt | cut -c 1-70}
 #
 # If more than 50 lines, print "more left"
-${color1}${font Sans:size=9}${texeci 10 echo `wc -l ~/.config/conky/trello/trello.txt | cut -d ' ' -f1`-70 | bc -l | sed 's/-.*/0/' | awk '{if ($1!=0){print $1,"more left..."}}'}
+${color1}${font Arial:size=9}${texeci 10 echo `wc -l ~/.config/conky/trello/trello.txt | cut -d ' ' -f1`-70 | bc -l | sed 's/-.*/0/' | awk '{if ($1!=0){print $1,"more left..."}}'}
 
 ]];
