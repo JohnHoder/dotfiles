@@ -233,8 +233,6 @@ for_window [class="[Zz]athura"] border none
 for_window [class="URxvt"] border 1pixel
 for_window [window_role="vlc-playlist"] floating enable
 
-for_window [class="Chrome" window_role="pop-up"] floating enable
-
 ## General setting has to be first, so that more specific ones can override
 for_window [class="Firefox"] border none
 for_window [class="Firefox" window_type="Dialog"] border normal 2
@@ -249,6 +247,9 @@ for_window [class="Firefox" title="Tree Style Tab Konfiguration"] floating enabl
 for_window [class="Chromium" title="Chromium$"] floating disable
 for_window [class="Chromium" title="Chromium$"] border none
 for_window [title="Save File" class="Chromium"] border pixel 3
+for_window [class="Chromium" window_role="pop-up"] floating enable
+for_window [class="Chromium" window_role="pop-up"] border pixel 3
+
 
 for_window [title="Remmina Remote Desktop Client" class="org.remmina.Remmina"] floating enable
 
@@ -287,6 +288,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+End exec "i3lock -ti ~/.config/i3/wallpapers/bg.png"
 
 ## register school subjects
-bindsym $mod+Ctrl+Shift+1 exec "gnome-terminal -x bash -c 'cd ~/muni1/ && python muni_seminars_threaded.py; read -n1;'"
-bindsym $mod+Ctrl+Shift+2 exec "gnome-terminal -x bash -c 'cd ~/muni2_1/ && python muni_seminars_threaded.py; read -n1;'"; exec "gnome-terminal -x bash -c 'cd ~/muni2_2/ && python muni_seminars_threaded.py; read -n1;'"
-bindsym $mod+Ctrl+Shift+3 exec "gnome-terminal -x bash -c 'cd ~/muni3/ && python muni_seminars_threaded.py; read -n1;'"
+#bindsym $mod+Ctrl+Shift+1 exec "gnome-terminal -x bash -c 'cd ~/muni1/ && python muni_seminars_threaded.py; read -n1;'"
+#bindsym $mod+Ctrl+Shift+2 exec "gnome-terminal -x bash -c 'cd ~/muni2_1/ && python muni_seminars_threaded.py; read -n1;'"; exec "gnome-terminal -x bash -c 'cd ~/muni2_2/ && python muni_seminars_threaded.py; read -n1;'"
+#bindsym $mod+Ctrl+Shift+3 exec "gnome-terminal -x bash -c 'cd ~/muni3/ && python muni_seminars_threaded.py; read -n1;'"
