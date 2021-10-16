@@ -30,6 +30,8 @@ PATH=/usr/local/share/games/fortunes:$PATH
 
 export PATH
 
+$(~/dotfiles/mount.sh)
+
 # Create alias for chromeproxy
 alias chromeproxy='chromium-browser --proxy-server="localhost:8080"'
 
