@@ -273,9 +273,14 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+Shift+f exec $terminal -e ranger
 
 ## Audio
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Fedora up to 33
+#bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%- unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
 
 ## Make NumLock ON by default
 exec_always --no-startup-id numlockx on

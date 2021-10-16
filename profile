@@ -63,7 +63,8 @@ fi
 ### Start X on tty1 automatically (without having to type startx)
 ### And fix sound bug on some machines
 if [[ "$(tty)" == '/dev/tty1' && "$EUID" -ne 0 ]]; then
-	$(amixer -D pulse sset Master on) > /dev/null 2>&1
+	# Update to Fedora 34 broke this shit
+	#$(amixer -D pulse sset Master on) > /dev/null 2>&1
 	$(startx i3)
 	# > /dev/null 2>&1 = no output on the screen
 fi
