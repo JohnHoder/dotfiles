@@ -36,3 +36,6 @@
       - texlive-wrapfig
       - texlive-hyphenat
       - texlive-totcount
+      - texlive-nag
+      - texlive-nomencl
+
