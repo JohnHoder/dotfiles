@@ -50,5 +50,6 @@
       - texlive-totpages
       - texlive-cleveref
       - texlive-biblatex-gost
+      - texlive-floatrow
       ###################################
 
