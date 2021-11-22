@@ -36,6 +36,19 @@
       - texlive-wrapfig
       - texlive-hyphenat
       - texlive-totcount
+      # Russian dissertation specialities
       - texlive-nag
       - texlive-nomencl
+      - texlive-comment
+      - texlive-siunitx
+      - texlive-makecell
+      - texlive-tabu
+      - texlive-tabulary
+      - texlive-threeparttable
+      - texlive-soulutf8
+      - texlive-was
+      - texlive-totpages
+      - texlive-cleveref
+      - texlive-biblatex-gost
+      ###################################
 
