@@ -52,5 +52,7 @@
       - texlive-cleveref
       - texlive-biblatex-gost
       - texlive-floatrow
+      - texlive-appendixnumberbeamer
+      - texlive-esint
       ###################################
 
