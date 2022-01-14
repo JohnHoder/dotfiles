@@ -30,7 +30,8 @@ PATH=/usr/local/share/games/fortunes:$PATH
 
 export PATH
 
-$(~/dotfiles/mount.sh)
+# Mount DATA partition - requires sudo, that's why it does not work here:/
+#$(~/dotfiles/mount.sh)
 
 # Create alias for chromeproxy
 alias chromeproxy='chromium-browser --proxy-server="localhost:8080"'
