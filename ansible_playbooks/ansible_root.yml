@@ -122,9 +122,12 @@
 
    - name: Download and unpack fortunes-fr
      unarchive:
-       src: https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz
+       #src: https://www.fortunes-fr.org/fortunes-fr/fortunes-fr-0.02.tar.gz
+       #dest: ~/
+       #remote_src: yes
+       src: ../fortunes-fr-0.02.tar.gz
        dest: ~/
-       remote_src: yes
+       remote_src: no
 
    - name: Install fortunes-fr
      shell: 'cd ~/fortunes-fr-0.02; ./configure; make; make install'
