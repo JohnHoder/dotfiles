@@ -55,4 +55,8 @@
       - texlive-appendixnumberbeamer
       - texlive-esint
       ###################################
+      ####### EPS TO PDF SUPPORT ########
+      - texlive-collection-fontsrecommended texlive-collection-fontutilstexlive-collection-fontsrecommended texlive-collection-fontutils
+      - texlive-font-change
+      ###################################
 
