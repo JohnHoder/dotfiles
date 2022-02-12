@@ -54,6 +54,7 @@
       - texlive-floatrow
       - texlive-appendixnumberbeamer
       - texlive-esint
+      - texlive-draftwatermark
       ###################################
       ####### EPS TO PDF SUPPORT ########
       - texlive-collection-fontsrecommended texlive-collection-fontutilstexlive-collection-fontsrecommended texlive-collection-fontutils
