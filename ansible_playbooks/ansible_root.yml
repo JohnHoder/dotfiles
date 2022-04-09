@@ -5,6 +5,8 @@
   vars:
      ansible_python_interpreter: python3
   tasks:
+
+   - import_tasks: ansible_root_texmaker.yml
   
    - name: check fedora version
      shell: rpm -E %fedora

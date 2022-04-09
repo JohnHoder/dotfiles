@@ -1,7 +1,12 @@
 - hosts: all
   become: true
   become_user: john
+  vars:
+     personal_projects: "{{ lookup('env', 'HOME') }}/PROJECTS"
   tasks:
+
+   - import_tasks: ansible_personal_projects.yml
+
    - name: test
      shell: echo 'test'
 

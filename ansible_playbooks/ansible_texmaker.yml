@@ -1,0 +1,56 @@
+- name: Installing texmaker and texlive packages
+  dnf: name={{item}} state=present
+  with_items:
+   - texmaker
+   - latexmk
+   - texlive-pdfcprot
+   - texlive-acronym
+   - texlive-titling
+   - texlive-collection-langcyrillic
+   - texlive-cyrillic
+   - texlive-cm-lgc
+   - texlive-substitutefont
+   - texlive-babel-czech
+   - texlive-babel-russian
+   - texlive-babel-german
+   - texlive-babel-french
+   - texlive-babel-slovak
+   - texlive-hyphen-czech
+   - texlive-hyphen-french
+   - texlive-hyphen-german
+   - texlive-hyphen-russian
+   - texlive-hyphen-english
+   - texlive-hyphen-slovak
+   - texlive-ruhyphen
+   - texlive-slantsc
+   - texlive-paracol
+   - texlive-textpos
+   - texlive-svg
+   - texlive-wrapfig
+   - texlive-hyphenat
+   - texlive-totcount
+   # Russian dissertation specialities
+   - texlive-nag
+   - texlive-nomencl
+   - texlive-comment
+   - texlive-siunitx
+   - texlive-makecell
+   - texlive-tabu
+   - texlive-tabulary
+   - texlive-threeparttable
+   - texlive-soulutf8
+   - texlive-was
+   - texlive-totpages
+   - texlive-cleveref
+   - texlive-biblatex-gost
+   - texlive-floatrow
+   - texlive-appendixnumberbeamer
+   - texlive-esint
+   - texlive-draftwatermark
+   ###################################
+   ####### EPS TO PDF SUPPORT ########
+   - texlive-collection-fontsrecommended
+   - texlive-collection-fontutils
+   - texlive-font-change
+   ###################################
+
