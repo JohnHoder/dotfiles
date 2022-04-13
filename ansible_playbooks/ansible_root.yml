@@ -6,7 +6,7 @@
      ansible_python_interpreter: python3
   tasks:
 
-   - import_tasks: ansible_root_texmaker.yml
+   - import_tasks: ansible_texmaker.yml
   
    - name: check fedora version
      shell: rpm -E %fedora
@@ -160,4 +160,5 @@
          - bs4
          - lxml
          - requests
+
 
