@@ -160,5 +160,6 @@
          - bs4
          - lxml
          - requests
+         - prettytable
 
 
