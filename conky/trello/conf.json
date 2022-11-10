@@ -29,8 +29,7 @@
     BY_DATE: by due date
 */
 "toanalyse" : {
-    "Ежедневный план" : "BY_DATE",
-    "PrF - plnění" : "BY_DATE",
+    "To do:" : "BY_DATE",
     "Русский язык - словарь" : "BY_DATE",
     "Français - le vocabulaire" : "BY_DATE",
     "Sonstiges" : "BY_DATE"
