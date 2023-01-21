@@ -47,6 +47,7 @@
    - texlive-appendixnumberbeamer
    - texlive-esint
    - texlive-draftwatermark
+   - texlive-totalcount
    ###################################
    ####### EPS TO PDF SUPPORT ########
    - texlive-collection-fontsrecommended
