@@ -1,58 +1,55 @@
 general {
-        colors = true
-        interval = 5
+	colors = true
+	interval = 5
 	output_format = i3bar
-        markup = "pango"
+	markup = "pango"
+	separator = "|"
 }
 
 #order += "ipv6"
-#order += "disk /"
+order += "disk /"
 order += "run_watch DHCP"
-#order += "run_watch VPN_tap"
+#order += "run_watch openvpn"
 order += "wireless wlp13s0"
 order += "ethernet enp14s0"
 order += "volume master"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_usage"
+order += "memory"
 order += "tztime berlin"
 
 
 tztime berlin {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Berlin"
+	format = "%Y-%m-%d %H:%M:%S %Z"
+	timezone = "Europe/Berlin"
 }
 
 wireless wlp13s0 {
-        format_up = "W: (%quality [%essid], %bitrate) %ip"
-        format_down = "W: down"
+	format_up = "W: (%quality [%essid], %bitrate) %ip"
+	format_down = "W: down"
 }
 
 ethernet enp14s0 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+	# if you use %speed, i3status requires the cap_net_admin capability
+	format_up = "E: %ip (%speed)"
+	format_down = ""
 }
 
 battery 0 {
-        format = "Akku %status %percentage %remaining %emptytime %consumption"
-        format_down = "No battery"
-        status_chr = "⚡"
-        status_bat = "🔋"
-        status_unk = "?"
-        status_full = ":)"
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
+	# true - показ процента заряда от 0 до 100
+	# false - показ процента заряда от 0 до n, с учетом
+	# изношенности аккумулятора
+	# last_full_capacity = true
+	format = "Akku %status %percentage %remaining %emptytime %consumption"
+	format_down = "No battery"
+	status_chr = "⚡"
+	status_bat = "🔋"
+	status_unk = "?"
+	status_full = ":)"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
 	hide_seconds = true
-}
-
-run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
-}
-
-run_watch VPN_tap {
-        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        pidfile = "/sys/class/net/tap0/dev_id"
 }
 
 cpu_usage {
@@ -60,19 +57,53 @@ cpu_usage {
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+	format = "T: %degrees °C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
 }
 
 disk "/" {
-        format = "%free"
+	format = "/: %percentage_used"
+	threshold_type = percentage_free
+	low_threshold = 10
+	threshold_type = "gbytes_avail"
+	format_below_threshold = "Warning: %avail"
+}
+
+memory {
+	memory_used_method = classical
+	format = "%used (%percentage_used)"
+	unit = Gi
+	# percentage values indicate free space left
+	threshold_degraded = "25%"
+	threshold_critical = "15%"
 }
 
 volume master {
-        format = "♪: <span color='#BBBB44'>%volume</span>"
-        format_muted = "♪: muted (%volume)"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+	format = "♪: <span color='#BBBB44'>%volume</span>"
+	format_muted = "♪: muted (%volume)"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
 }
 
+# отслеживание процесса openvpn
+# служит как индикатор работы openvpn клиента
+# при запуске openvpn необходимо
+# указывать параметр --writepid /var/run/openvpn.pid
+run_watch openvpn {
+    pidfile = "/var/run/openvpn.pid"
+    format = " openvpn"
+    # если пареметр format_down оставить пустым,
+    # то при неактивном процессе блок будет отсутствовать
+    format_down=""
+}
+
+run_watch VPN_tap {
+	# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+	pidfile = "/sys/class/net/tap0/dev_id"
+}
+
+
+run_watch DHCP {
+	pidfile = "/var/run/dhclient*.pid"
+}
