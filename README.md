@@ -18,7 +18,7 @@ Running command `chsh -s /usr/bin/zsh` is not needed as `zsh` is getting called 
 Recursive repo clone (`git clone --recursive https://github.com/JohnHoder/dotfiles.git`) is not needed. The subrepository `dotbot` will be synced automatically by running `setupdotfiles.sh`.
 
 ## To push changes to this repo
-For HTTPS:
+For HTTPS (HTTPS authentication not supported by Github anymore):
 
     git remote set-url origin https://github.com/JohnHoder/dotfiles.git
 

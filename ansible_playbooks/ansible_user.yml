@@ -24,8 +24,6 @@
    - name: Downloading oh-my-zsh
      when: oh_my_zsh.stat.exists == False
      shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-     args:
-       warn: false
      ignore_errors: true
      tags:
      - essentials
