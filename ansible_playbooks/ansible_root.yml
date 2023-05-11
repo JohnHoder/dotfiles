@@ -7,12 +7,10 @@
   tasks:
 
    - import_tasks: ansible_texmaker.yml
-  
+
    - name: check fedora version
      shell: rpm -E %fedora
      register: current_fedora
-     args:
-       warn: false
 
    - name: Setting up ffmpeg
      dnf: name={{item}} state=present validate_certs=no disable_gpg_check=yes
@@ -93,8 +91,6 @@
 
    - name: Add Sublime Text rpm
      shell: 'rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
-     args:
-       warn: false
 
    - name: Add Sublime Text repo
      shell:  'dnf config-manager \
