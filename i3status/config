@@ -9,7 +9,8 @@ general {
 #order += "ipv6"
 order += "disk /"
 order += "run_watch DHCP"
-#order += "run_watch openvpn"
+order += "run_watch VPN_tap"
+order += "run_watch VPN_tun"
 order += "wireless wlp13s0"
 order += "ethernet enp14s0"
 order += "volume master"
@@ -72,7 +73,7 @@ disk "/" {
 memory {
 	memory_used_method = classical
 	format = "%used (%percentage_used)"
-	unit = Gi
+	#unit = Gi
 	# percentage values indicate free space left
 	threshold_degraded = "25%"
 	threshold_critical = "15%"
@@ -101,6 +102,17 @@ run_watch openvpn {
 run_watch VPN_tap {
 	# path exists when a VPN tunnel launched by nmcli/nm-applet is active
 	pidfile = "/sys/class/net/tap0/dev_id"
+	format = "⬤ TAP"
+	#format_down = "⬤"
+	format_down = ""
+}
+
+run_watch VPN_tun {
+	# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+	pidfile = "/sys/class/net/tun0/dev_id"
+	format = "⬤ TUN"
+	#format_down = "⬤"
+	format_down = ""
 }
 
 
