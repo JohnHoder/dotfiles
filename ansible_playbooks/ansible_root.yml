@@ -104,7 +104,7 @@
 
 #   - name: Downloading oh-my-zsh
 #     shell: wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-   
+
 #   - name: Downloading zsh-completion
 #     shell: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 
@@ -151,11 +151,13 @@
      pip:
        name:
          - bottle
-         - jsmin 
+         - jsmin
          - pyowm
          - bs4
          - lxml
          - requests
          - prettytable
+         - pyowm
+
 
 
