@@ -171,9 +171,9 @@ bindsym $mod+Shift+r restart
 set $exit_mode Exit: [S]uspend/[L]ogout/[R]eboot/[P]oweroff
 mode "$exit_mode" {
     bindsym l exec_always "~/.config/i3/onexit.sh; exit"
-    bindsym r exec "~/.config/i3/onexit.sh; systemctl reboot"
-    bindsym p exec "~/.config/i3/onexit.sh; systemctl poweroff"
-    bindsym s exec "~/.config/i3/onexit.sh; systemctl suspend"
+    bindsym r exec "~/.config/i3/onexit.sh | systemctl reboot"
+    bindsym p exec "~/.config/i3/onexit.sh | systemctl poweroff"
+    bindsym s exec "~/.config/i3/onexit.sh | systemctl suspend"
 
     bindsym Escape mode "default"
 }
@@ -198,16 +198,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ## Decorations
-### Class               border  backgr. text    indicator
+### Class                border  backgr. text    indicator
 #client.focused          #a60400 #8d2737 #d7f970 #bc008d
 #client.unfocused        #000000 #8d8888 #dddddd #bc8888
 #client.focused_inactive #000000 #8d8888 #d7f970 #bc8888
 #client.urgent           #b7f200 #ff0700 #b7f200
 ### Purple theme
-client.focused          #664477 #FFCC99 #181715 #e7d8b1
-client.focused_inactive #e7d8b1 #e7d8b1 #181715 #A074C4
-client.unfocused        #222133 #222133 #AAAAAA #A074C4
-client.urgent           #CE4045 #CE4045 #e7d8b1 #DCCD69
+client.focused           #664477 #FFCC99 #181715 #e7d8b1
+client.focused_inactive  #e7d8b1 #e7d8b1 #181715 #A074C4
+client.unfocused         #222133 #222133 #AAAAAA #A074C4
+client.urgent            #CE4045 #CE4045 #e7d8b1 #DCCD69
 
 ## Bar
 bar {

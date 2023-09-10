@@ -6,4 +6,4 @@ killall nm-applet
 killall udiskie
 
 echo "---> Conky and stuff killed."
-exit
+return 0
