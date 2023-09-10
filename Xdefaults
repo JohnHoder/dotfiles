@@ -1,7 +1,7 @@
 URxvt.font: xft:DejaVu Sans Mono:size=12
 
 # scrollback buffer lines - 65535 is max on most machines (64 is default)
-URxvt.saveLines: 5000000
+URxvt.saveLines: 65535
 
 ! gnome-terminal Tango theme
 ! black
