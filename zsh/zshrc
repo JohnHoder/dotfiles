@@ -108,3 +108,6 @@ export QT_IM_MODULE="ibus"
 ######################################################
 ######################################################
 
+### Print fortune [french] on every newly opened terminal window (add "droit" if you want to see only law related quotes)
+[ -x /usr/bin/fortune ] && fortune /usr/local/share/games/fortunes
+
