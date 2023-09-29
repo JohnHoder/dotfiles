@@ -3,6 +3,14 @@
   become_user: john
   vars:
      personal_projects: "{{ lookup('env', 'HOME') }}/PROJECTS"
+     username: "{{ lookup('env', 'USER') }}"
+
+  # Store password for chsh command
+  vars_prompt:
+   - name: "my_password"
+     prompt: "Enter password"
+     private: yes
+
   tasks:
 
    - import_tasks: ansible_personal_projects.yml
@@ -35,10 +43,17 @@
 #     tags:
 #     - essentials
 
-   - name: Install zsh plugin for autocompletions
+   - name: Install zsh plugin for zsh-autosuggestions
      ansible.builtin.git:
        repo: https://github.com/zsh-users/zsh-autosuggestions
        dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+     tags:
+     - essentials
+
+   - name: Install zsh plugin for zsh-autocomplete
+     ansible.builtin.git:
+       repo: https://github.com/marlonrichert/zsh-autocomplete
+       dest: ~/.oh-my-zsh/custom/plugins/zsh-autocomplete
      tags:
      - essentials
 
@@ -55,14 +70,20 @@
    - name: Cloning zsh-syntax-highlighting repo
      git:
        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
-       dest: ~/zsh-syntax-highlighting
+       dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
      tags:
      - essentials
 
+   - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `chsh` (case insensitve password string match)
+     expect:
+       command: "chsh -s /bin/zsh {{ username }}"
+       responses:
+         (?i)password: "{{ my_password }}"
+       creates: ".shell_is_zsh"
 
-#     shell: chsh -s /usr/bin/zsh
-   - name: Change shell to zsh
-     shell: chsh -s `which zsh`
-     tags:
-     - essentials
+# #     shell: chsh -s /usr/bin/zsh
+#    - name: Change shell to zsh
+#      shell: chsh -s `which zsh`
+#      tags:
+#      - essentials
 

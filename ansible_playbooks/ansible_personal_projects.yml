@@ -5,3 +5,5 @@
     mode: "0755"
   tags:
   - essentials
+  ignore_errors: true
+  when: username == "john" #Create only for john user

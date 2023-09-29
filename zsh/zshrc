@@ -53,7 +53,7 @@ ZSH_THEME="custom"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-completions)
+plugins=(git zsh-autocomplete zsh-autosuggestions) ### zsh-syntax-highlighting is separately
 
 autoload -U compinit && compinit
 
@@ -62,7 +62,7 @@ autoload -U compinit && compinit
 # Do not source these if root
 if [ "$EUID" -ne 0 ]; then
 	source $ZSH/oh-my-zsh.sh
-	source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # Compilation flags
