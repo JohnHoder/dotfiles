@@ -80,6 +80,8 @@
       - vlc
       - java-11-openjdk
       - audacity
+      # for chsh
+      - util-linux-user
       # TeamViewer dependencies
       - qt5-qtquickcontrols
       - qt5-qtlocation
