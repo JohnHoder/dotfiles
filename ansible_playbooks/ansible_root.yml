@@ -138,16 +138,16 @@
        path: ~/fortunes-fr-0.02
        state: absent
 
-   - name: Download youtube-dl
-     get_url:
-       url: https://yt-dl.org/latest/youtube-dl
-       dest: /usr/local/bin/youtube-dl
+#   - name: Download youtube-dl
+#     get_url:
+#       url: https://yt-dl.org/latest/youtube-dl
+#       dest: /usr/local/bin/youtube-dl
 
-   - name: chmod youtube-dl
-     file:
-       path: /usr/local/bin/youtube-dl
-       state: file
-       mode: u+rwx,g+rx,o+rx
+#   - name: chmod youtube-dl
+#     file:
+#       path: /usr/local/bin/youtube-dl
+#       state: file
+#       mode: u+rwx,g+rx,o+rx
 
    - name: Install pip modules
      pip:
@@ -160,6 +160,7 @@
          - requests
          - prettytable
          - pyowm
+         - yt-dlp
 
 
 
