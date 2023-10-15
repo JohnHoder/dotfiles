@@ -27,6 +27,7 @@
        state: present
        update_cache: true
      with_items:
+      - gnome-tweak-tool
       - git
       - zathura-pdf-mupdf
       - zathura
