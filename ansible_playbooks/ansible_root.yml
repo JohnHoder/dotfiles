@@ -68,6 +68,7 @@
       - xterm
       - brasero
       - pip
+      - xrandr
       - lm_sensors
       - compton
       - shutter
