@@ -48,6 +48,7 @@
    - texlive-esint
    - texlive-draftwatermark
    - texlive-totalcount
+   - texlive-multirow
    ###################################
    ####### EPS TO PDF SUPPORT ########
    - texlive-collection-fontsrecommended
