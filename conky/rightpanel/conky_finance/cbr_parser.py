@@ -20,26 +20,33 @@ def finance_parse(base_url, headers):
     request = session.get(base_url, headers=headers)
     if request.status_code == 200:
         soup = bs(request.content, 'lxml')
-        div = soup.find('div', {'class': 'dropdown_content'})
+        div = soup.find('div', {'class': 'rate col-md-7 offset-md-1'})
         title = str(textwrap.wrap(div.text))
-        cource_txt = (title[3:14])
-        date_daily = (title[29:39])
-        date_now = (title[40:50])
-        dollar_txt = (title[55:69])
-        price_dollar_daily = (title[73:80])
-        price_dollar_now = (title[81:88])
-        euro_txt = (title[93:101])
-        price_euro_daily = (title[104:111])
-        price_euro_now = (title[112:119])
+        print(title)
+        month = title.split()[1]
+        #date_now = (title[3:14])
+        print(month)
+        inflation = title.split()[3][:-2]
+        print(inflation)
+        
+
+        #date_daily = (title[29:39])
+        #date_now = (title[40:50])
+        #dollar_txt = (title[55:69])
+        #price_dollar_daily = (title[73:80])
+        #price_dollar_now = (title[81:88])
+        #euro_txt = (title[93:101])
+        #price_euro_daily = (title[104:111])
+        #price_euro_now = (title[112:119])
 
         file = open('usdeuro.txt', 'w')     # path to file
-        file.write(cource_txt + ' на ' + date_now + '\n')
-        file.write(dollar_txt + ' = ' + price_dollar_now + '.руб\n')
-        file.write(euro_txt + ' = ' + price_euro_now + '.руб\n')
+        file.write('Инфляция в ' + month + ': ' + inflation + '\n')
+        #file.write(dollar_txt + ' = ' + price_dollar_now + '.руб\n')
+        #file.write(euro_txt + ' = ' + price_euro_now + '.руб\n')
 
-        file.write('\n' + cource_txt + ' на ' + date_daily + '\n')
-        file.write(dollar_txt + ' = ' + price_dollar_daily + '.руб\n')
-        file.write(euro_txt + ' = ' + price_euro_daily + '.руб\n')
+        #file.write('\n' + cource_txt + ' на ' + date_daily + '\n')
+        #file.write(dollar_txt + ' = ' + price_dollar_daily + '.руб\n')
+        #file.write(euro_txt + ' = ' + price_euro_daily + '.руб\n')
 
         file.close()
 
