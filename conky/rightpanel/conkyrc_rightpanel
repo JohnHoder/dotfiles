@@ -160,7 +160,7 @@ ${font Arial:bold:size=10}${color #3b71a1}FINANCE ${color #3b71a1}${hr 2}
 # This only gets data and saves them to file
 #$font${color DimGray}${execi 60 python3 ~/.config/conky/rightpanel/conky_finance/cbr_parser.py}
 # This displays them
-${font Arial:size=10}${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_finance/usdeuro.txt}
+${font Arial:size=10}${color DimGray}${execi 62 cat ~/.config/conky/rightpanel/conky_finance/financedata.txt}
 #
 ${font Arial:bold:size=10}${color #3b71a1}WEATHER ${color #3b71a1}${hr 2}
 # This only gets data and saves them to file

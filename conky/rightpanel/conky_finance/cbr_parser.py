@@ -1,58 +1,73 @@
 #!/usr/bin/python3
 
-# € $
-
 import requests
 import re
 import textwrap
 from bs4 import BeautifulSoup as bs
 
-
 headers = {'accept': '*/*',
            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) '
                          'Chrome/79.0.3945.130 Safari/537.36'}
 
-base_url = 'https://www.cbr.ru/key-indicators/'
+base_url_inflation = 'https://www.cbr.ru/key-indicators/'
+base_url_rate = 'https://www.cbr.ru/eng/currency_base/daily/'
+
+month = 'NULL'
+inflation = 'NULL'
+eur_to_rub = 'NULL'
+date = 'NULL'
+
+def writeToFile(month, inflation, eur_to_rub, date):
+    file = open('financedata.txt', 'w')
+
+    # Inflation rate in RF
+    file.write('Инфляция в ' + month + 'е' + ' (ЦБ РФ): ' + inflation + '\n')
+    # EUR to RUB rate
+    file.write('\n' + 'Курсы валют' + ' на ' + date + '\n')
+    file.write('1 EUR' + ' = ' + eur_to_rub + ' RUB\n')
+
+    # Close the file handler
+    file.close()
 
 
-def finance_parse(base_url, headers):
+def finance_parse(headers):
     session = requests.Session()
-    request = session.get(base_url, headers=headers)
-    if request.status_code == 200:
-        soup = bs(request.content, 'lxml')
+    request_inflation = session.get(base_url_inflation, headers=headers)
+    if request_inflation.status_code == 200:
+        soup = bs(request_inflation.content, 'lxml')
         div = soup.find('div', {'class': 'rate col-md-7 offset-md-1'})
         title = str(textwrap.wrap(div.text))
-        print(title)
+        #print(title)
         month = title.split()[1]
         #date_now = (title[3:14])
-        print(month)
+        #print(month)
         inflation = title.split()[3][:-2]
-        print(inflation)
-        
+        #print(inflation)
+    else:
+        print('ERROR')
+    
+    session2 = requests.Session()
+    request_rate = session2.get(base_url_rate, headers=headers)
+    if request_rate.status_code == 200:
+        soup = bs(request_rate.content, 'lxml')
+        table = soup.findChildren('table', {'class': 'data'})[0]
+        rows = table.findChildren(['th', 'tr'])
 
-        #date_daily = (title[29:39])
-        #date_now = (title[40:50])
-        #dollar_txt = (title[55:69])
-        #price_dollar_daily = (title[73:80])
-        #price_dollar_now = (title[81:88])
-        #euro_txt = (title[93:101])
-        #price_euro_daily = (title[104:111])
-        #price_euro_now = (title[112:119])
+        for row in rows:
+            cells = row.findChildren('td')
+            for cell in cells:
+                value = cell.string
+                if value=="EUR":
+                    #print(cells[4].string)
+                    eur_to_rub = cells[4].string
 
-        file = open('usdeuro.txt', 'w')     # path to file
-        file.write('Инфляция в ' + month + ': ' + inflation + '\n')
-        #file.write(dollar_txt + ' = ' + price_dollar_now + '.руб\n')
-        #file.write(euro_txt + ' = ' + price_euro_now + '.руб\n')
-
-        #file.write('\n' + cource_txt + ' на ' + date_daily + '\n')
-        #file.write(dollar_txt + ' = ' + price_dollar_daily + '.руб\n')
-        #file.write(euro_txt + ' = ' + price_euro_daily + '.руб\n')
-
-        file.close()
+        date = soup.find('button', {'class': 'datepicker-filter_button'}).string
+        #print(date)
 
     else:
         print('ERROR')
 
+    writeToFile(month, inflation, eur_to_rub, date)
 
 if __name__ == '__main__':
-    finance_parse(base_url, headers)
+    finance_parse(headers)
