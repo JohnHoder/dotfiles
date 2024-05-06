@@ -38,9 +38,9 @@ def finance_parse(headers):
         div = soup.find('div', {'class': 'rate col-md-7 offset-md-1'})
         title = str(textwrap.wrap(div.text))
         #print(title)
-        month = title.split()[1]
+        month = title.split()[1].lower()
         #date_now = (title[3:14])
-        #print(month)
+        print(month)
         inflation = title.split()[3][:-2]
         #print(inflation)
     else:
