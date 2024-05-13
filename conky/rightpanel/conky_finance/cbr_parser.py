@@ -12,11 +12,6 @@ headers = {'accept': '*/*',
 base_url_inflation = 'https://www.cbr.ru/key-indicators/'
 base_url_rate = 'https://www.cbr.ru/eng/currency_base/daily/'
 
-month = 'NULL'
-inflation = 'NULL'
-eur_to_rub = 'NULL'
-date = 'NULL'
-
 def writeToFile(month, inflation, eur_to_rub, date):
     file = open('financedata.txt', 'w')
 
@@ -31,6 +26,12 @@ def writeToFile(month, inflation, eur_to_rub, date):
 
 
 def finance_parse(headers):
+
+    month = 'NULL'
+    inflation = 'NULL'
+    eur_to_rub = 'NULL'
+    date = 'NULL'
+
     session = requests.Session()
     request_inflation = session.get(base_url_inflation, headers=headers)
     if request_inflation.status_code == 200:
@@ -40,7 +41,7 @@ def finance_parse(headers):
         #print(title)
         month = title.split()[1].lower()
         #date_now = (title[3:14])
-        print(month)
+        #print(month)
         inflation = title.split()[3][:-2]
         #print(inflation)
     else:
