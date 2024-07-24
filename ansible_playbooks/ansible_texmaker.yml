@@ -49,6 +49,7 @@
    - texlive-draftwatermark
    - texlive-totalcount
    - texlive-multirow
+   - texlive-cmap
    ###################################
    ####### EPS TO PDF SUPPORT ########
    - texlive-collection-fontsrecommended
