@@ -50,6 +50,9 @@
    - texlive-totalcount
    - texlive-multirow
    - texlive-cmap
+   - texlive-microtype
+   - texlive-pdfpages
+   - texlive-cite
    ###################################
    ####### EPS TO PDF SUPPORT ########
    - texlive-collection-fontsrecommended
